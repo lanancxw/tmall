@@ -1,0 +1,225 @@
+$font-family:"Microsoft YaHei",tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;
+$font-size:12px;
+$redColor:#FF0036;
+//导航字体
+@font-face{
+    font-family:fpIconFont;
+    src:url(../fonts/font_eu7qkdb0zt3jif6r.woff) format('woff')
+}
+/* 最外层 */
+#mallPage{
+    width:100%;
+    color:#fff;
+    font-family: $font-family;
+    font-size: $font-size;
+}
+
+
+/* 导航栏 */
+#mallPage #site-nav{
+    height:32px;
+    line-height: 32px;
+    background-color: #ccc;
+}
+#site-nav .sn-container{
+    position: relative;
+    a{
+        color:#fff;
+    }
+    .login-info .sn-login{
+        padding:0 10px 0 20px;
+    }
+    ul{
+        position: absolute;
+        right:0;
+        top:0;
+        li{
+            float:left;
+            margin-right:12px;
+            a span.icon-gouwuche{
+                font-size:13px;
+                margin-right:3px;
+                color:$redColor;
+            }
+            span.icon-phone{
+                font-size: 14px;
+                color:$redColor;
+            }
+            span.icon-daohanglan{
+                font-size: 12px;
+                color:$redColor;
+            }
+        }
+    }
+}
+
+
+
+/* header部分 */
+#mallPage #header{
+    height:130px;
+    position: relative;
+    padding-top:38px;
+    box-sizing: border-box;
+    img{
+        position: absolute;
+        left:0px;
+        top:0;
+    }
+}
+#header .mallSearch{
+    width:623px;
+    height:36px;
+    line-height: 36px;
+    // margin-top: 38px;
+    margin-left:300px;
+    border:2px solid $redColor;
+    position: relative;
+    input{
+        border:none;
+        width:491px;
+        outline: none;//去掉input边框
+        font:16px/22px arial;
+        padding:5px 3px 5px 5px;
+        box-sizing: border-box;
+        &:placeholder{
+            font:12px/1.5 tahoma,arial,"\5b8b\4f53";
+        }
+    }
+    button{
+        width:132px;
+        height:36px;
+        font-size:18px;
+        font-weight: 700;
+        letter-spacing: 5px;
+        border:none;
+        outline: none;
+        position: absolute;
+        z-index:1;
+        right:0;
+        top:0;
+        color:#fff;
+        background-color: $redColor;
+    }
+}
+
+
+
+/* content 导航栏部分 */
+#mallPage #content .main-nav{
+    height:35.5px;
+}  
+.main-nav .inner-con{
+    width:1030px;  
+    height:36px;
+    margin-left:245px;
+    .inner-con1{
+        float: left;
+        a{
+            height:35px;
+            line-height: 35px;
+            color:#333;
+            cursor: pointer;
+            float: left;
+            padding:0 8px;
+            font-size: 16px;
+            img{
+                width:100px;
+                height:30px;
+                margin-top: 3px;
+                display: block;
+            }
+        }
+    }
+    
+}
+
+/* @font-face{
+    font-family:fpIconFont;
+    src:url(fonts/font_lo8q60v4spi1wcdi.woff) format("woff");
+   
+} */
+
+
+#mallPage #content .j-category{
+    height:500px;
+}
+.j-category{
+    position: relative;
+    left:45px;
+    height: 500px;
+    width: 100%;
+    .j-nav{
+        span{
+            position: absolute;
+            z-index:100;
+            margin-top: -36px;        
+            display: inline-block;
+            width:200px;
+            height:36px;
+            line-height: 36px;
+            background-color: $redColor;
+            color:#fff;
+            font-size:16px;
+            text-align: center;
+        }
+        .j-item{
+            width:200px;
+            height:500px;
+            background-color: rgba(0,0,0,.55);
+            position: relative;
+            z-index:11;
+            li{
+                position: relative;
+                height:31.2px;
+                line-height: 31.2px;
+                color:#fff;
+                font-size:14px;           
+                .icon {
+                    font-family: fpIconFont;
+                    display: inline-block;
+                    opacity: .5;
+                    margin-left: 14px;
+                    margin-right: 4px;
+                    height: 31px;
+                    line-height: 31px;
+                    font-size: 16px;
+                }    
+            }
+        }
+    }
+    .banner-con{
+        position: absolute;
+        left:50px;
+        top:0;
+        img{
+            height: 100%;
+            width: 100%;
+            display: block;
+            z-index: 1;
+        }
+        /* &:before{
+            margin-left:-1015px;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            height: 500px;
+            width: 385px;
+            content: "\20";
+            z-index: 99;
+        }
+        &:after{
+            margin-left:600px;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            height: 500px;
+            width: 385px;
+            content: "\20";
+            z-index: 99;
+        } */
+    }
+    
+}

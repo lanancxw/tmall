@@ -1,0 +1,29 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1591178048895'); /* IE9 */
+  src: url('iconfont.eot?t=1591178048895#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAPcAAsAAAAACEAAAAOOAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDHAqDfIMvATYCJAMQCwoABCAFhG0HRxsgB8geg+Nuc2Fy4x5vDbs1Zv6jLn1fki+yZEqBaQoRlYG2hKdOTONl6tgx9cWcFlnT31UCqaaKULXbbPAD9A2QUnN2StaNB55r/osyPT48wlgK7flaaS1Uxfufy+mtLIH57SzHtZZNPeoFGE2ggMZeZAWUc8PYBS1xMxBAGWYKqhMeX6kSwexFABrPV/hUKaMjGtKJRAIVE2PQHAYZ7mevAEeD79MDZSABxohgDszqjlJqc3a7bb7N36bMQ8CfzgKATQM4YApAAPUrbTWyUWwKTqm/yZkHkCQGQTeYebF9HwqOIpOWHWCD/zxKYaZaAGAOjHMIug4JDIKZJHDotgUPsJEAABJgA24AmmH6EFkBAi9My1rH8mwlxplm4a32bR0Hu250lhwIvds7C11Pq5ysoeBWiWy9LNPlriLnln7iwlv3Bojz98faZx+Ssf3BuLzqwdPbTil14Mz2s7rc42VzCy1ub3QKztypFPexs+5tu691+enb7gYH+7sHH25/0M8pcA/e7V/6e2bVUoED7dWXw0Gp29+drc6H7ddrh8b3z4VZyL7xwfbBkDomvze/l8/k/e8/nS9rvH8upczvFawKevO7DV60G6f95bdQd+vhUSn2rzXYSq2I+m56be204vXUFZUX6rO53wSvk3Fbyr/6/Oz9ss8rdbUk6hOFmTy5q6v0dCtEjMhtzhy8aMbHDIcM0tjYwZ/+ITEjrcjJ19Po7abpyNYYC2nzbR2BB9GVD7FMCoD/4/+5CwDswHoA/8Sf8yn/thMmzd9SpRv2T+pnK/nRs44KPP5JoJscP4jfmf8n+R3zhCY09SJWRA5P9wuRflU/BlAUwAeuXv5M4egLiYVIzofAhBgKnDQGFfxjpAIGbQ6EACkSlMkSp2u9rZBFsQlgkt0AiOcpMI4u4DyvUUH7DYZ+/kKAF3BQCoLeC2rjgvkqdgXyPkpQk8B8kWzZNvqVMP2JSmDybloYMH7Q9bQgzJzO88kz2uhOMWRlqCxX+TI0uGRBAtgOTZNgmUs6iv60yfff6+kzuepN01qyUhWxXIjnQxJQIwHmExGb7BX3VQqff0KKgInnNlCq3D+Qy6PVD2aaZkYH9CyzO1Fu5ZqVQoqlVXwy0MBFLCABWJBpxQhYVt1Oh0S+qaYBkbe16ahQQ1fZdHmF9YZrABRzEREw4iTIgGqqSeVtxXRG55c1kY2lxqVBFIgqplIAAA==') format('woff2'),
+  url('iconfont.woff?t=1591178048895') format('woff'),
+  url('iconfont.ttf?t=1591178048895') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1591178048895#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-daohanglan:before {
+  content: "\e70d";
+}
+
+.icon-phone:before {
+  content: "\e60f";
+}
+
+.icon-gouwuche:before {
+  content: "\e64f";
+}
+

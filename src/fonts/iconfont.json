@@ -1,0 +1,30 @@
+{
+  "id": "1860927",
+  "name": "tmall",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1322561",
+      "name": "导航栏",
+      "font_class": "daohanglan",
+      "unicode": "e70d",
+      "unicode_decimal": 59149
+    },
+    {
+      "icon_id": "856958",
+      "name": "手机",
+      "font_class": "phone",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "1277688",
+      "name": "购物车",
+      "font_class": "gouwuche",
+      "unicode": "e64f",
+      "unicode_decimal": 58959
+    }
+  ]
+}
