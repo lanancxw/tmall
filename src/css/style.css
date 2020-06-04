@@ -1,4 +1,6 @@
 @charset "UTF-8";
+/* 公共样式 */
+/* 导航栏字体 */
 @font-face {
   font-family: fpIconFont;
   src: url(../fonts/font_eu7qkdb0zt3jif6r.woff) format("woff");
@@ -6,7 +8,6 @@
 /* 最外层 */
 #mallPage {
   width: 100%;
-  color: #fff;
   font-family: "Microsoft YaHei", tahoma, arial, "Hiragino Sans GB", "宋体", sans-serif;
   font-size: 12px;
 }
@@ -15,42 +16,41 @@
 #mallPage #site-nav {
   height: 32px;
   line-height: 32px;
-  background-color: #ccc;
+  background-color: #f2f2f2;
 }
 
-#site-nav .sn-container {
+.sn-container {
   position: relative;
+  color: #999 a;
+  color-color: #999;
 }
-#site-nav .sn-container a {
-  color: #fff;
-}
-#site-nav .sn-container .login-info .sn-login {
+.sn-container .login-info .sn-login {
   padding: 0 10px 0 20px;
 }
-#site-nav .sn-container ul {
+.sn-container ul {
   position: absolute;
   right: 0;
   top: 0;
 }
-#site-nav .sn-container ul li {
+.sn-container ul li {
   float: left;
   margin-right: 12px;
 }
-#site-nav .sn-container ul li a span.icon-gouwuche {
+.sn-container ul li a span.icon-gouwuche {
   font-size: 13px;
   margin-right: 3px;
   color: #FF0036;
 }
-#site-nav .sn-container ul li span.icon-phone {
+.sn-container ul li span.icon-phone {
   font-size: 14px;
   color: #FF0036;
 }
-#site-nav .sn-container ul li span.icon-daohanglan {
+.sn-container ul li span.icon-daohanglan {
   font-size: 12px;
   color: #FF0036;
 }
 
-/* header部分 */
+/* header头部 */
 #mallPage #header {
   height: 130px;
   position: relative;
@@ -98,7 +98,7 @@
   background-color: #FF0036;
 }
 
-/* content 导航栏部分 */
+/* content - 导航栏部分 */
 #mallPage #content .main-nav {
   height: 35.5px;
 }
@@ -127,20 +127,19 @@
   display: block;
 }
 
-/* @font-face{
-    font-family:fpIconFont;
-    src:url(fonts/font_lo8q60v4spi1wcdi.woff) format("woff");
-   
-} */
+/* content - 列表部分+轮播图 */
 #mallPage #content .j-category {
   height: 500px;
 }
 
 .j-category {
   position: relative;
-  left: 45px;
   height: 500px;
   width: 100%;
+}
+.j-category .j-nav {
+  position: absolute;
+  left: 45px;
 }
 .j-category .j-nav span {
   position: absolute;
@@ -153,7 +152,11 @@
   background-color: #FF0036;
   color: #fff;
   font-size: 16px;
-  text-align: center;
+  font-weight: bold;
+}
+.j-category .j-nav span i {
+  margin: 0 14px;
+  font-size: 14px;
 }
 .j-category .j-nav .j-item {
   width: 200px;
@@ -168,6 +171,11 @@
   line-height: 31.2px;
   color: #fff;
   font-size: 14px;
+  cursor: pointer;
+}
+.j-category .j-nav .j-item li:hover {
+  background-color: #fff;
+  font-weight: bold;
 }
 .j-category .j-nav .j-item li .icon {
   font-family: fpIconFont;
@@ -179,38 +187,137 @@
   line-height: 31px;
   font-size: 16px;
 }
-.j-category .banner-con {
-  position: absolute;
-  left: 50px;
-  top: 0;
-  /* &:before{
-      margin-left:-1015px;
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 50%;
-      height: 500px;
-      width: 385px;
-      content: "\20";
-      z-index: 99;
-  }
-  &:after{
-      margin-left:600px;
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 50%;
-      height: 500px;
-      width: 385px;
-      content: "\20";
-      z-index: 99;
-  } */
+.j-category .j-nav .j-item li:nth-child(2n-1):hover {
+  color: #e54077;
 }
-.j-category .banner-con img {
+.j-category .j-nav .j-item li:nth-child(2n):hover {
+  color: #427def;
+}
+
+.banner-con {
+  height: 500px;
+  position: relative;
+}
+.banner-con ul {
+  height: 100%;
+}
+.banner-con ul li {
+  width: 100%;
+  height: 100%;
+  transition: all 1s;
+  position: absolute;
+  opacity: 0;
+}
+.banner-con ul li:nth-of-type(1):before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  width: 410px;
+  left: 0;
+  background-color: #501298;
+}
+.banner-con ul li:nth-of-type(1):after {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  width: 410px;
+  right: 0;
+  background-color: #501298;
+}
+.banner-con ul li:nth-of-type(2):before, .banner-con ul li:nth-of-type(3):before, .banner-con ul li:nth-of-type(4):before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  width: 410px;
+  left: 0;
+  background-color: #e8e8e8;
+}
+.banner-con ul li:nth-of-type(2):after, .banner-con ul li:nth-of-type(3):after, .banner-con ul li:nth-of-type(4):after {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  width: 410px;
+  right: 0;
+  background-color: #e8e8e8;
+}
+.banner-con ul li:nth-of-type(5):before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  width: 410px;
+  left: 0;
+  background-color: #A80601;
+}
+.banner-con ul li:nth-of-type(5):after {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  width: 410px;
+  right: 0;
+  background-color: #A80601;
+}
+.banner-con ul li:nth-of-type(6):before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  width: 410px;
+  left: 0;
+  background-color: #DD3C00;
+}
+.banner-con ul li:nth-of-type(6):after {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  width: 410px;
+  right: 0;
+  background-color: #DD3C00;
+}
+.banner-con ul li a {
+  position: absolute;
+  left: 95px;
+  top: 0;
+}
+.banner-con ul li > a > img {
   height: 100%;
   width: 100%;
   display: block;
   z-index: 1;
+}
+.banner-con ol {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 25px;
+}
+.banner-con ol li {
+  background: #000;
+  width: 25px;
+  height: 5px;
+  display: inline-block;
+  overflow: hidden;
+  margin-left: 5px;
+  cursor: pointer;
+  opacity: .3;
+}
+.banner-con ol li.active {
+  opacity: .5;
+  background-color: #fff;
 }
 
 /*# sourceMappingURL=style.css.map */
