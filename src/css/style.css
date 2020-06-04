@@ -578,17 +578,185 @@
   right: -38px;
 }
 
-.wonderfulbody li a .item-pic {
+.wonderfulbody {
+  width: 1230px;
+  display: flex;
+  justify-content: space-between;
+  height: 333px;
+}
+.wonderfulbody li {
+  float: left;
+  width: 235px;
+  margin-bottom: 7px;
+}
+.wonderfulbody li a {
+  display: block;
+  border: 2px solid #fff;
+  position: relative;
+  background-color: #fff;
+  overflow: hidden;
+  margin-right: 7px;
+  margin-bottom: 7px;
+  width: 100%;
+  height: 315px;
+}
+.wonderfulbody li a:hover {
+  outline: 1px solid #ff0036;
+}
+.wonderfulbody .item-pic {
   display: block;
   width: 185px;
   height: 185px;
+  margin: 20px auto 0;
+}
+.wonderfulbody .item-pic img {
+  width: 185px;
+  height: 185px;
+}
+.wonderfulbody .item-info {
+  display: block;
+  padding: 14px 12px 8px;
+  text-align: center;
+}
+.wonderfulbody .item-info .item-desc {
+  margin: 8px auto;
+  display: block;
+  width: 135px;
+  height: 40px;
+  line-height: 20px;
   overflow: hidden;
-  margin: 20px auto 0 img;
-  margin-width: 185px;
-  margin-height: 185px;
-  margin-width: 100%;
-  margin-height: 100%;
-  margin-background-size: 100% 100%;
+}
+.wonderfulbody .item-info .item-desc .item-name {
+  font-size: 14px;
+  line-height: 18px;
+  color: #666;
+}
+.wonderfulbody .item-info .item-price {
+  position: relative;
+  display: block;
+  height: 33px;
+  line-height: 22px;
+  margin-top: 2px;
+  line-height: 32px;
+  color: #ff0036;
+  font-size: 18px;
+}
+
+/* footer */
+.footer {
+  width: 100%;
+}
+.footer .foot {
+  background-color: #f5f5f5;
+  padding-bottom: 5px;
+}
+.footer .foot .tm-end {
+  width: 80px;
+  height: 45px;
+  background: url("//img.alicdn.com/tps/TB1wQDAPXXXXXXgaFXXXXXXXXXX-62-35.png") no-repeat;
+  position: relative;
+  content: '\20';
+  text-align: center;
+  margin: 0 auto 10px;
+  background-size: cover;
+  z-index: 9;
+}
+.footer .footer-con {
+  border-top: 1px solid #D1D7DC;
+}
+.footer .footer-con .tmall-ensure {
+  width: 1190px;
+  height: 100px;
+  background: #fff;
+  background: url("//img.alicdn.com/tfs/TB14dANRXXXXXbdXXXXXXXXXXXX-1190-100.jpg") no-repeat;
+  margin: 25px auto;
+}
+.footer .footer-con .tmall-desc {
+  position: relative;
+  width: 1190px;
+  padding-top: 22px;
+  height: 190px;
+  margin: auto;
+  border-top: 1px solid #ededed;
+}
+.footer .footer-con .tmall-desc dl {
+  float: left;
+  width: 186px;
+  padding-left: 52px;
+}
+.footer .footer-con .tmall-desc dl dt {
+  color: #646464;
+  font-size: 16px;
+  font-weight: 700;
+  height: 30px;
+  line-height: 30px;
+  text-align: left;
+}
+.footer .footer-con .tmall-desc dl dd a {
+  text-align: left;
+  height: 20px;
+  line-height: 20px;
+  color: #8b8b8b;
+}
+.footer .footer-con .tmall-desc dl#mobile {
+  float: left;
+  width: 186px;
+  padding-left: 52px;
+}
+.footer .footer-con .tmall-desc dl#mobile dd img {
+  display: inline-block;
+  width: 105px;
+  height: 105px;
+  line-height: 105px;
+  text-align: center;
+  /* img{
+      background-size:100% 100%;
+  } */
+}
+.footer .footer-con .tmall-desc .smalltmall {
+  width: 68px;
+  height: 25px;
+  background-image: url("//img.alicdn.com/tfs/TB1dl28RXXXXXbzaFXXXXXXXXXX-136-50.png");
+  background-repeat: no-repeat;
+  background-size: 68px 25px;
+  position: absolute;
+  bottom: 0;
+  left: 45px;
+}
+.footer .footer-con .tmall-copyright {
+  border-top: 2px solid #FF0036;
+  background: #000;
+  text-align: left;
+  min-height: 177px;
+}
+.footer .footer-con .tmall-copyright .footer-tmallinfo {
+  width: 1190px;
+  margin: 0 auto;
+  line-height: 25px;
+  padding: 5px 0;
+  color: #fff;
+}
+.footer .footer-con .tmall-copyright .footer-tmallinfo a {
+  margin-right: 3px;
+  color: #fff;
+}
+.footer .footer-con .tmall-copyright .footer-copyright {
+  width: 1190px;
+  margin: 0 auto;
+  line-height: 20px;
+  background: #000;
+  color: #a4a4a4;
+}
+.footer .footer-con .tmall-copyright .footer-copyright span {
+  color: #a4a4a4;
+}
+.footer .footer-con .tmall-copyright .footer-copyright a {
+  color: #A4A4A4;
+}
+.footer .footer-con .tmall-copyright .footer-copyright b {
+  display: block;
+  color: #686868;
+  font-weight: 400;
 }
 
 /*# sourceMappingURL=style.css.map */
