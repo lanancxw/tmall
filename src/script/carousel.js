@@ -32,7 +32,7 @@ export default class carousel {
         }
     }
 
-    tabswitch() { //核心：切换过程
+    tabswitch() {
         for (let j = 0; j < this.btnLi.length; j++) {
             //清空按钮上面的类名。
             this.btnLi[j].className = '';
@@ -40,6 +40,7 @@ export default class carousel {
         }
         this.btnLi[this.index].className = 'active';
         this.picLi[this.index].style.opacity = 1;
+        
     }
 
     autoplay() {

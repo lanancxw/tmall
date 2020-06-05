@@ -21,8 +21,10 @@
 
 .sn-container {
   position: relative;
-  color: #999 a;
-  color-color: #999;
+  color: #999;
+}
+.sn-container a {
+  color: #999;
 }
 .sn-container .login-info .sn-login {
   padding: 0 10px 0 20px;
@@ -79,9 +81,6 @@
   padding: 5px 3px 5px 5px;
   box-sizing: border-box;
 }
-#header .mallSearch input:placeholder {
-  font: 12px/1.5 tahoma,arial,"\5b8b\4f53";
-}
 #header .mallSearch button {
   width: 132px;
   height: 36px;
@@ -123,6 +122,9 @@
   float: left;
   padding: 0 8px;
   font-size: 16px;
+}
+.main-nav .inner-con .inner-con1 a:hover {
+  color: #ff0036;
 }
 .main-nav .inner-con .inner-con1 a img {
   width: 100px;
@@ -212,84 +214,16 @@
   position: absolute;
   opacity: 0;
 }
-.banner-con ul li:nth-of-type(1):before {
-  content: "";
-  display: block;
-  position: absolute;
-  z-index: -1;
-  height: 100%;
-  width: 410px;
-  left: 0;
+.banner-con ul li:nth-of-type(1) {
   background-color: #501298;
 }
-.banner-con ul li:nth-of-type(1):after {
-  content: "";
-  display: block;
-  position: absolute;
-  z-index: -1;
-  height: 100%;
-  width: 410px;
-  right: 0;
-  background-color: #501298;
-}
-.banner-con ul li:nth-of-type(2):before, .banner-con ul li:nth-of-type(3):before, .banner-con ul li:nth-of-type(4):before {
-  content: "";
-  display: block;
-  position: absolute;
-  z-index: -1;
-  height: 100%;
-  width: 410px;
-  left: 0;
+.banner-con ul li:nth-of-type(2), .banner-con ul li:nth-of-type(3), .banner-con ul li:nth-of-type(4) {
   background-color: #e8e8e8;
 }
-.banner-con ul li:nth-of-type(2):after, .banner-con ul li:nth-of-type(3):after, .banner-con ul li:nth-of-type(4):after {
-  content: "";
-  display: block;
-  position: absolute;
-  z-index: -1;
-  height: 100%;
-  width: 410px;
-  right: 0;
-  background-color: #e8e8e8;
-}
-.banner-con ul li:nth-of-type(5):before {
-  content: "";
-  display: block;
-  position: absolute;
-  z-index: -1;
-  height: 100%;
-  width: 410px;
-  left: 0;
+.banner-con ul li:nth-of-type(5) {
   background-color: #A80601;
 }
-.banner-con ul li:nth-of-type(5):after {
-  content: "";
-  display: block;
-  position: absolute;
-  z-index: -1;
-  height: 100%;
-  width: 410px;
-  right: 0;
-  background-color: #A80601;
-}
-.banner-con ul li:nth-of-type(6):before {
-  content: "";
-  display: block;
-  position: absolute;
-  z-index: -1;
-  height: 100%;
-  width: 410px;
-  left: 0;
-  background-color: #DD3C00;
-}
-.banner-con ul li:nth-of-type(6):after {
-  content: "";
-  display: block;
-  position: absolute;
-  z-index: -1;
-  height: 100%;
-  width: 410px;
-  right: 0;
+.banner-con ul li:nth-of-type(6) {
   background-color: #DD3C00;
 }
 .banner-con ul li a {

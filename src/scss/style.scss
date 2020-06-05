@@ -28,9 +28,9 @@ $j-category-bluebg:#427def;
 }
 .sn-container{
     position: relative;
-    color:$color999
+    color:$color999;
     a{
-        color:$color999
+        color:$color999;
     }
     .login-info .sn-login{
         padding:0 10px 0 20px;
@@ -86,9 +86,6 @@ $j-category-bluebg:#427def;
         font:16px/22px arial;
         padding:5px 3px 5px 5px;
         box-sizing: border-box;
-        &:placeholder{
-            font:12px/1.5 tahoma,arial,"\5b8b\4f53";
-        }
     }
     button{
         width:132px;
@@ -129,6 +126,9 @@ $j-category-bluebg:#427def;
             float: left;
             padding:0 8px;
             font-size: 16px;
+            &:hover{
+                color:#ff0036;
+            }
             img{
                 width:100px;
                 height:30px;
@@ -212,56 +212,25 @@ $j-category-bluebg:#427def;
     height:500px;
     position: relative;
     ul{
-        height: 100%;
-        
+        height: 100%;       
         li{
             width:100%;
             height:100%;
             transition:all 1s;
             position: absolute;
             opacity:0;
-            &:nth-of-type(1):before{
-                @include before;
-                left: 0;
+            &:nth-of-type(1){
                 background-color: #501298;            
             }
-            &:nth-of-type(1):after{        
-                @include before;
-                right: 0;
-                background-color: #501298;                       
-            }
-            &:nth-of-type(2):before,
-            &:nth-of-type(3):before,
-            &:nth-of-type(4):before{
-                @include before;
-                left: 0;
+            &:nth-of-type(2),
+            &:nth-of-type(3),
+            &:nth-of-type(4){
                 background-color: #e8e8e8;            
             }
-            &:nth-of-type(2):after,
-            &:nth-of-type(3):after,
-            &:nth-of-type(4):after{
-                @include before;
-                right: 0;
-                background-color: #e8e8e8;            
-            }
-            &:nth-of-type(5):before{
-                @include before;
-                left: 0;
+            &:nth-of-type(5){
                 background-color: #A80601;            
             }
-            &:nth-of-type(5):after{
-                @include before;
-                right: 0;
-                background-color: #A80601;            
-            }
-            &:nth-of-type(6):before{
-                @include before;
-                left: 0;
-                background-color: #DD3C00;            
-            }
-            &:nth-of-type(6):after{
-                @include before;
-                right: 0;
+            &:nth-of-type(6){
                 background-color: #DD3C00;            
             }
         }

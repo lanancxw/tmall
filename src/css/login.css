@@ -1,0 +1,142 @@
+@charset "UTF-8";
+/* 公共样式 */
+#login .header {
+  padding: 22px 0px;
+  height: 44px;
+  width: 1190px;
+  margin: auto;
+}
+#login .header a img {
+  display: block;
+  width: 190px;
+  height: 27px;
+  background-size: 100% 100%;
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  background-color: #f97fbe;
+}
+.content .inner {
+  width: 1190px;
+  margin: auto;
+}
+.content .form-inner {
+  width: 350px;
+  height: 400px;
+  background-color: #fff;
+  overflow: hidden;
+  position: absolute;
+  top: 100px;
+  right: 150px;
+  min-height: 350px;
+  padding: 25px 25px 23px;
+  color: #6c6c6c;
+  background: #fff;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.form-login {
+  box-sizing: border-box;
+}
+.form-login .login-block {
+  text-align: left;
+  margin-top: 4px;
+}
+.form-login .login-block a {
+  display: block;
+  width: 64px;
+  height: 22px;
+  line-height: 18px;
+  font-weight: 700;
+  margin: 9px 10px 00;
+  color: #3c3c3c;
+  font-size: 16px;
+}
+.form-login .fm-hint {
+  height: 18px;
+  line-height: 18px;
+  padding: 5px 8px;
+  font-size: 12px;
+  color: #6c6c6c;
+  background-color: #fef2f2;
+  border: 1px solid #ff934c;
+  margin: 10px 0;
+}
+.form-login .fm-hint .icon-icon {
+  color: #ff934c;
+}
+.form-login .fm-field {
+  width: 100%;
+}
+.form-login .fm-field .input-user {
+  width: 100%;
+  position: relative;
+}
+.form-login .fm-field .input-user label {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  background-color: #ccc;
+  left: 1px;
+  top: 1px;
+}
+.form-login .fm-field .input-pwd {
+  position: relative;
+  margin-top: 20px;
+}
+.form-login .fm-field .input-pwd label {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  background-color: #ccc;
+  left: 1px;
+  top: 1px;
+}
+.form-login .fm-field .input-pwd label .icon-mima {
+  font-size: 20px;
+}
+.form-login .fm-field input {
+  width: 100%;
+  border: 1px solid #ccc;
+  height: 42px;
+  outline: none;
+  font-size: 14px;
+  padding-left: 50px;
+  box-sizing: border-box;
+}
+.form-login .fm-field input:hover {
+  border: 1px solid #ff0036;
+}
+.form-login .fm-btn {
+  width: 100%;
+  margin-top: 20px;
+}
+.form-login .fm-btn button {
+  width: 100%;
+  line-height: 42px;
+  text-align: center;
+  outline: none;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  background-color: #ff0036;
+}
+.form-login .fm-link {
+  margin-top: 20px;
+  text-align: right;
+}
+.form-login .fm-link a {
+  color: #6c6c6c;
+  font-size: 12px;
+}
+
+/*# sourceMappingURL=login.css.map */

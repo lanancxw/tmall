@@ -1,11 +1,3 @@
-@mixin before{
-    content:"";
-    display: block;                    
-    position: absolute;                
-    z-index: -1;    
-    height: 100%;
-    width:410px;
-}
 @mixin more{
     position: absolute;
     right: 14px;
@@ -22,4 +14,13 @@
     font-size: 16px;
     color: #666;
     overflow: hidden
+}
+@mixin label{
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    background-color: #ccc;
 }
