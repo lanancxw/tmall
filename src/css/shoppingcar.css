@@ -1,0 +1,303 @@
+@charset "UTF-8";
+.contain {
+  width: 990px;
+  margin: 0 auto;
+}
+
+.org {
+  color: #ff4400;
+}
+
+body {
+  height: 1000px;
+}
+
+.logo {
+  width: 95px;
+  padding: 20px 0 40px;
+}
+.logo a {
+  width: 181px;
+  height: 45px;
+  display: block;
+  background: url(../img/shoppingpic.png) no-repeat;
+  background-position: -110px 0;
+  background-color: #fff;
+}
+
+.shop-content .title {
+  height: 37px;
+  line-height: 24px;
+  border-bottom: 2px solid #e6e6e6;
+}
+.shop-content .title .t-info {
+  width: 120px;
+  text-indent: 1em;
+  height: 37px;
+  display: inline-block;
+  color: #ff4400;
+  font-weight: bold;
+  font-family: arial, "Hiragino Sans GB", "宋体", sans-serif;
+  border-bottom: 2px solid #ff4400;
+}
+.shop-content .title .t-info i {
+  font-weight: normal;
+  font-size: 14px;
+}
+.shop-content .title .t-detail {
+  color: #000;
+  float: right;
+  font-size: 14px;
+  font: 12px/1.5 tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;
+}
+.shop-content .title .t-detail .price {
+  color: #ff4400;
+  font-weight: bold;
+}
+.shop-content .title .t-detail .price button {
+  outline: none;
+  border: none;
+  background-color: #aaa;
+  color: #fff;
+  text-align: center;
+  width: 55px;
+  height: 25px;
+  line-height: 25px;
+  border-radius: 3px;
+  font-weight: normal;
+  font-size: 12px;
+  letter-spacing: 4px;
+}
+
+.content tr {
+  display: flex;
+}
+.content tr .line1 {
+  width: 45px;
+  text-align: center;
+}
+.content tr .line2 {
+  flex: 1;
+  padding-left: none;
+}
+.content tr .line3 {
+  width: 120px;
+}
+.content tr .line4 {
+  width: 120px;
+}
+.content tr .line5 {
+  width: 105px;
+}
+.content tr .line6 {
+  width: 99px;
+}
+.content tr .line3, .content tr .line4, .content tr .line5, .content tr .line6 {
+  padding-left: 10px;
+}
+.content tr td input[type=checkbox] {
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
+  -webkit-appearance: none;
+  border: 1px solid #c9c9c9;
+  border-radius: 2px;
+  outline: none;
+  transform: translateY(5px);
+}
+.content tr td input[type=checkbox]:checked:before {
+  display: block;
+  content: "\2714";
+  text-align: center;
+  font-size: 16px;
+  color: #ff0036;
+  transform: translateY(-4px);
+}
+.content .con-title {
+  width: 990px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 12px;
+  color: #000;
+}
+.content .con-title .line1 {
+  width: 80px;
+}
+.content .con-title .line2 {
+  padding-left: 91px;
+}
+.content .con-title1 {
+  height: 120px;
+  margin-top: 38px;
+  padding-top: 20px;
+  box-sizing: border-box;
+  background-color: #fcfcfc;
+  border: 1px solid #ccc;
+}
+.content .con-title1 .line2 {
+  display: flex;
+}
+.content .con-title1 .line2 .food {
+  border: 1px solid #ccc;
+  width: 80px;
+  height: 80px;
+}
+.content .con-title1 .line2 > span {
+  height: 80px;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.content .con-title1 .line2 > span a {
+  display: inline-block;
+  width: 186px;
+  font-size: 14px;
+  line-height: 18px;
+  height: 36px;
+  color: #3c3c3c;
+  overflow: hidden;
+}
+.content .con-title1 .line2 > span .tip {
+  display: inline-block;
+  background-size: 100% 100%;
+}
+.content .con-title1 .line2 > span .tip .tip1 {
+  display: inline-block;
+  width: 16px;
+  height: 11px;
+}
+.content .con-title1 .line2 > span .tip .tip2, .content .con-title1 .line2 > span .tip .tip3 {
+  width: 16px;
+  height: 16px;
+}
+.content .con-title1 .line3 {
+  color: #9c9c9c;
+  font-size: 12px;
+  line-height: 18px;
+  font-family: Verdana,Tahoma,arial;
+}
+.content .con-title1 .line3 del:before {
+  content: '￥';
+}
+.content .con-title1 .line3 .del {
+  color: #3c3c3c;
+  font-size: 13px;
+  font-weight: 700;
+}
+.content .con-title1 .line3 .del:before {
+  content: '￥';
+}
+.content .con-title1 .line4 .num {
+  width: 77px;
+  height: 25px;
+  line-height: 25px;
+  display: flex;
+  border: 1px solid #e5e5e5;
+}
+.content .con-title1 .line4 .num .cut, .content .con-title1 .line4 .num .add {
+  width: 19px;
+  color: #444444;
+  background-color: #f0f0f0;
+  text-align: center;
+}
+.content .con-title1 .line4 .num .num-box {
+  flex: 1;
+  text-align: center;
+  font-size: 12px;
+  background: #fff;
+  border: 1px solid #aaa;
+}
+.content .con-title1 .line5 {
+  font-size: 13px;
+  color: #ff4400;
+  font-weight: bold;
+  font-family: Verdana,Tahoma,arial;
+}
+.content .con-title1 .line5:before {
+  content: '￥';
+}
+.content .con-title1 .line6 a {
+  display: block;
+  line-height: 18px;
+  color: #000;
+  font-size: 13px;
+}
+
+.footer {
+  width: 990px;
+  height: 50px;
+  line-height: 50px;
+  background-color: #e5e5e5;
+  position: fixed;
+  bottom: 0;
+  font-size: 12px;
+}
+.footer ul > li {
+  float: left;
+  font-family: arial, "Hiragino Sans GB", "宋体", sans-serif;
+  margin-right: 25px;
+}
+.footer ul > li a {
+  font-family: arial, "Hiragino Sans GB", "宋体", sans-serif;
+  color: #000;
+}
+.footer ul > li input[type=checkbox] {
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
+  -webkit-appearance: none;
+  border: 1px solid #c9c9c9;
+  border-radius: 2px;
+  outline: none;
+  transform: translateY(5px);
+}
+.footer ul > li input[type=checkbox]:checked:before {
+  display: block;
+  content: "\2714";
+  text-align: center;
+  font-size: 16px;
+  color: #ff0036;
+  transform: translateY(-4px);
+}
+.footer .footer-r {
+  font-family: arial, "Hiragino Sans GB", "宋体", sans-serif;
+  float: right;
+}
+.footer .footer-r .amount-sum {
+  margin-right: 40px;
+}
+.footer .footer-r .amount-sum:after {
+  content: '';
+  background: url(../img/shoppingpic.png) no-repeat;
+  width: 5px;
+  height: 6px;
+  background-position: 0 -115px;
+  display: inline-block;
+  margin-left: 5px;
+}
+.footer .footer-r .amount-sum .org {
+  display: inline-block;
+  font-size: 18px;
+  padding: 0 5px;
+  font-weight: 700;
+  transform: translateY(2px);
+}
+.footer .footer-r .price-sum i {
+  display: inline-block;
+  font-size: 22px;
+  font-weight: 700;
+  transform: translateY(2px);
+}
+.footer .footer-r button {
+  width: 120px;
+  height: 51px;
+  outline: none;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  letter-spacing: 4px;
+  background-color: #b0b0b0;
+}
+
+/*# sourceMappingURL=shoppingcar.css.map */

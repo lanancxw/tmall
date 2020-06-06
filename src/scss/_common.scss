@@ -24,3 +24,21 @@
     position: absolute;
     background-color: #ccc;
 }
+@mixin checkbox {
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    -webkit-appearance:none;
+    border: 1px solid #c9c9c9;
+    border-radius: 2px;
+    outline: none;
+    transform: translateY(5px);
+}
+@mixin checkbox-before {
+    display: block;
+    content: "\2714";
+    text-align: center;
+    font-size: 16px;
+    color: $colorred;
+    transform: translateY(-4px);
+}
