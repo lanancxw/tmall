@@ -1,4 +1,4 @@
-export default class carousel {
+export default class Carousel {
     constructor() {
         //获取元素
         this.banner = document.querySelector('.j-category .banner-con');

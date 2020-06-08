@@ -1,18 +1,20 @@
 @charset "UTF-8";
 /* 公共样式 */
-#login .header {
+/* 登录头部 */
+.header {
   padding: 22px 0px;
   height: 44px;
   width: 1190px;
   margin: auto;
 }
-#login .header a img {
+.header a img {
   display: block;
   width: 190px;
   height: 27px;
   background-size: 100% 100%;
 }
 
+/* 登录主内容区 */
 .content {
   position: relative;
   width: 100%;

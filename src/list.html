@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>列表页</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/custom-pagination.min.css">
+    <link rel="stylesheet" href="fonts/iconfont.css">
+    <style>
+        button{
+            outline:none;
+            border:none;
+            width:68px;
+            height:20px;
+        }
+        button:hover{
+            color:#fff;
+            background:#FF0036;
+        }
+    </style>
+</head>
+
+<body>
+    <iframe style="width:100%;height:150px;" src="./header.html" frameborder="0" scrolling="no" ></iframe> 
+    <button class="default">默认排序</button>
+    <button class="ceil">升序排序</button>
+    <button class="floor">降序排序</button>  
+    <div id="content">
+        <div class="j-wonderful container">
+            <ul class="wonderfulbody">
+                <!-- <li>
+                    <a href="#">
+                        <span class="item-pic">
+                            <img src="//img.alicdn.com/bao/uploaded/i4/TB1TmeYPXXXXXawXFXXXXXXXXXX_!!0-item_pic.jpg_400x400q60.jpg" alt="">
+                        </span>
+                        <span class="item-info">
+                            <span class="item-desc">
+                                <em class="item-name" title="1LINING李宁正品 新款男子开衫无帽卫衣外套 运动服AWDM093-1-4">1LINING李宁正品 新款男子开衫无帽卫衣外套 运动服AWDM093-1-4</em>
+                            </span>
+                            <span class="item-price">
+                                ￥169.0
+                            </span>
+                        </span>
+                    </a>
+                </li>  -->
+            </ul>
+        </div>
+    </div>
+    <div id="page" class="page"></div>
+
+    <script src="./script/custom-pagination.min.js"></script>
+    <script src="./script/list.js" type="module"></script>
+    
+</body>
+
+</html>
