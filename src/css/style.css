@@ -576,6 +576,40 @@
   font-size: 18px;
 }
 
+/* content - j-life */
+.j-lift ul {
+  width: 36px;
+  position: fixed;
+  left: 3px;
+  top: 35%;
+}
+.j-lift ul li {
+  width: 36px;
+  height: 36px;
+  padding: 6px;
+  box-sizing: border-box;
+  background-color: #666;
+  margin-bottom: 1px;
+}
+.j-lift ul li a {
+  font-size: 12px;
+  color: #fff;
+  text-align: center;
+}
+.j-lift ul li:nth-of-type(1) {
+  background-color: #FF0036;
+}
+.j-lift ul li:nth-of-type(6) {
+  padding: none;
+}
+.j-lift ul li:nth-of-type(6) a {
+  display: inline-block;
+  transform: translateY(-6px);
+}
+.j-lift ul li:nth-of-type(6) a i {
+  font-size: 18px;
+}
+
 /* footer */
 .footer {
   width: 100%;

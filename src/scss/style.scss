@@ -575,6 +575,41 @@ $j-category-bluebg:#427def;
     } 
 }
 
+/* content - j-life */
+.j-lift ul{
+    width:36px;
+    position:fixed;
+    left:3px;
+    top:35%;
+    li {
+        width:36px;
+        height:36px;
+        padding:6px;
+        box-sizing: border-box;
+        background-color: #666;
+        margin-bottom:1px;
+        a{
+            font-size:12px;
+            color:#fff;
+            text-align: center;
+        }
+    }
+    li:nth-of-type(1){
+        background-color: $redColor;
+    }
+    li:nth-of-type(6){
+        padding:none;
+        a{
+            display: inline-block;
+            transform: translateY(-6px);
+            i{
+                font-size:18px;
+            }
+        }
+        
+    }
+}
+
 
 /* footer */
 .footer{   
