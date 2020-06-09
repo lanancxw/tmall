@@ -12,21 +12,68 @@
 #content {
   width: 1190px;
   margin: 0 auto;
+  position: relative;
   padding-top: 30px;
   display: flex;
   justify-content: flex-start;
-  border: 1px solid #000;
 }
 
 #content .pic .spic {
   width: 418px;
   height: 418px;
-  border: 1px solid #000;
+  border: 1px solid #ccc;
+  position: relative;
+}
+#content .pic .spic img {
+  display: block;
+  width: 418px;
+  height: 418px;
+}
+#content .pic .spic .sf {
+  visibility: hidden;
+  background: #35a;
+  opacity: .3;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#content .pic .bfang {
+  position: absolute;
+  left: 430px;
+  top: 30px;
+  visibility: hidden;
+}
+#content .pic .bfang .bf {
+  width: 418px;
+  height: 418px;
+  border: 1px solid #ccc;
+  position: relative;
+  overflow: hidden;
+}
+#content .pic .bfang .bf .bpic {
+  width: 800px;
+  height: 800px;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 #content .pic .slun {
-  width: 418px;
+  width: 400px;
   height: 82px;
-  border: 1px solid #000;
+  margin: 0 auto;
+}
+#content .pic .slun ul {
+  display: flex;
+  justify-content: space-around;
+}
+#content .pic .slun li img {
+  width: 60px;
+  height: 60px;
+  margin-top: 24px;
+  border: 2px solid #fff;
+}
+#content .pic .slun li img:hover {
+  border: 2px solid #000;
 }
 
 .detail {
@@ -36,9 +83,12 @@
   border-right: 1px solid #e9e9e9;
 }
 .detail .d-title {
+  width: 100%;
   font-weight: bold;
   text-indent: 10px;
   color: #000;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .detail .d-price {
   height: 44px;
@@ -143,7 +193,6 @@
   justify-content: space-between;
 }
 .detail .d-num .box .num {
-  display: inline-block;
   width: 43px;
   height: 31px;
   border: 1px solid #999;

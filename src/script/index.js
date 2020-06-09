@@ -78,7 +78,7 @@ export class IndexWonderful {
         })
     }
 }
-/*  */
+/* 创建内容区小图标 */
 export class NewHot {
     constructor(){
         this.ul = document.querySelector('.j-newHotBrand .newHotBrandbody')

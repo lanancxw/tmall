@@ -1,6 +1,6 @@
 /* 封装ajax */
 import ajax from "./ajax.js";
-/* 分装懒加载 */
+/* 封装懒加载 */
 import LazyLoad from "./lazyload.js";
 
 /* 分页 */
@@ -24,8 +24,8 @@ new CustomPagination('#page', {
                 let strhtml = '';
                 for (let value of arrdata) {
                     strhtml += `
-                    <li >
-                        <a href="#">
+                    <li>
+                        <a href="./detail.html?sid=${value.goods_id}">
                             <span class="item-pic">
                                 <img data-src="${value.goods_smallpic}" alt="">
                             </span>
@@ -69,50 +69,50 @@ export default class Sort {
     init() {
         for (let i = 0; i < this.li.length; i++) {
             this.array_default.push(this.li[i]);
-            this.array.push(this.li[i]);
         }
         this.btnDefault.onclick = () => {
             for (let i = 0; i < this.array_default.length; i++) {
                 this.ul.appendChild(this.array_default[i]);
             }
         }
-        this.btnCeil.onclick = () => {
-            for (let i = 0; i < this.array.length - 1; i++) {
-                for (let j = 0; j < this.array.length - i - 1; j++) {
-                    this.prev = parseFloat(this.array[j].children[0].children[1].children[1].textContent);
-                    this.next = parseFloat(this.array[j+1].children[0].children[1].children[1].textContent);
-                    if(this.prev > this.next){
-                        let temp = this.array[j];
-                        this.array[j] = this.array[j + 1];
-                        this.array[j + 1] = temp;
-                    }
+        this.btnCeil.addEventListener('click', () => this.btnceilHandler());
+        this.btnFloor.addEventListener('click', () => this.btnfloorHandler());
+    }
+    btnceilHandler() {  
+        for (let i = 0; i < this.array.length - 1; i++) {
+            for (let j = 0; j < this.array.length - i - 1; j++) {
+                this.prev = parseFloat(this.array[j].children[0].children[1].children[1].textContent);
+                this.next = parseFloat(this.array[j + 1].children[0].children[1].children[1].textContent);
+                if (this.prev > this.next) {
+                    let temp = this.array[j];
+                    this.array[j] = this.array[j + 1];
+                    this.array[j + 1] = temp;     
+                              
                 }
             }
-            for (let i = 0; i < this.array.length; i++) {
-                this.ul.appendChild(this.array[i]);
-            }
-            document.documentElement.scrollTop = 1;
-            // console.log(document.documentElement.scrollTop);
-            
         }
-        this.btnFloor.onclick = () => {
-            for (let i = 0; i < this.array.length - 1; i++) {
-                for (let j = 0; j < this.array.length - i - 1; j++) {
-                    this.prev = parseFloat(this.array[j].children[0].children[1].children[1].textContent);
-                    this.next = parseFloat(this.array[j+1].children[0].children[1].children[1].textContent);
-                    if(this.prev < this.next){
-                        let temp = this.array[j];
-                        this.array[j] = this.array[j + 1];
-                        this.array[j + 1] = temp;
-                    }
+        for (let i = 0; i < this.array.length; i++) {
+            this.ul.appendChild(this.array[i]);
+        }
+        
+        document.documentElement.scrollTop = 1;
+    }
+    btnfloorHandler() {
+        for (let i = 0; i < this.array.length - 1; i++) {
+            for (let j = 0; j < this.array.length - i - 1; j++) {
+                this.prev = parseFloat(this.array[j].children[0].children[1].children[1].textContent);
+                this.next = parseFloat(this.array[j + 1].children[0].children[1].children[1].textContent);
+                if (this.prev < this.next) {
+                    let temp = this.array[j];
+                    this.array[j] = this.array[j + 1];
+                    this.array[j + 1] = temp;
                 }
             }
-            for (let i = 0; i < this.array.length; i++) {
-                this.ul.appendChild(this.array[i]);
-            }
-            document.documentElement.scrollTop = 1
         }
-
+        for (let i = 0; i < this.array.length; i++) {
+            this.ul.appendChild(this.array[i]);
+        }
+        document.documentElement.scrollTop = 2
     }
 }
-// new Sort();
+/* 点击跳转 */
