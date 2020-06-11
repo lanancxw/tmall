@@ -16,32 +16,39 @@
                 <h2>欢迎注册</h2>
                 <span>已有帐号？<a href="./login.html">登录</a></span>
             </div>
-            <form class="form-reg">
+            <form action="./login.html" class="form-reg">
                 <div class="line input-user">
                     <label for="user">
                         用户名
                     </label>
-                    <input type="text" placeholder="请设置用户名">
+                    <input type="text" name="user" placeholder="请设置用户名">
+                    <span>中英文均可，最长14个英文或7个汉字</span>
                 </div>
+
                 <div class="line input-pwd">
                     <label for="pwd">
                         密　码
                     </label>
-                    <input type="text" placeholder="请设置登录密码">
+                    <input type="text" name="password" placeholder="请设置密码">
+                    <span>长度为8~14个字符,至少包含2种字符</span>
                 </div>
-                <div class="line input-emali">
+                <div class="line input-email">
                     <label for="user">
                         邮　箱
                     </label>
-                    <input type="text" placeholder="会员名/邮箱">
+                    <input type="text" name="email" placeholder="会员名/邮箱">
+                    <span></span>
                 </div>
-                <button type="submit">登录</button>
+                <input type="submit" name="submit" class="submit" value="注册">
+                <!-- <button class="submit" name="submit" type="submit">注册</button> -->
                 <div class="agree">
-                    <input type="checkbox">阅读并接受<a href="javascript:;">《淘宝用户协议》</a>及<a href="javascript:;">《淘宝隐私保护声明》</a> 
+                    <input type="checkbox">阅读并接受<a href="javascript:;">《淘宝用户协议》</a>及<a
+                        href="javascript:;">《淘宝隐私保护声明》</a>
                 </div>
             </form>
         </div>
     </div>
+    <script src="./script/register.js" type="module"></script>
 </body>
 
 </html>

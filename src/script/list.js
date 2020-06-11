@@ -5,7 +5,6 @@ import LazyLoad from "./lazyload.js";
 
 /* 分页 */
 new CustomPagination('#page', {
-    total: 3, //总页数
     next_prev_links: 'yes',//是否开启[上一页/下一页]
     inupt_forward: 'yes',//是否开启[输入跳转]
     total: 5,//总页数（必需）
@@ -13,6 +12,20 @@ new CustomPagination('#page', {
     changePage: function (pageNum) { //切换页码成功回调
         console.log('当前页码：' + pageNum); //当前页码
         let wonderful = document.querySelector('.j-wonderful .wonderfulbody');
+        let footer = document.querySelector('.tmall-copyright');
+        let header = document.querySelector('.header');
+        new ajax({
+            url: 'include/header.html',
+            success:(data) => {
+                header.innerHTML = data
+            }
+        })
+        new ajax({
+            url: 'include/footer.html',
+            success:(data) => {
+                footer.innerHTML = data
+            }
+        })
         new ajax({
             url: "http://10.31.162.53/tmall/php/list.php",
             data: {

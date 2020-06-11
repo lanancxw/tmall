@@ -1,4 +1,5 @@
 $colorred:#ff0036;
+$red:#ff0036;
 $colororg:#ff4400;
 $fonts:arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;
 @import "common.scss";
@@ -191,6 +192,7 @@ body{
                 display:flex;
                 border:1px solid #e5e5e5;
                 .cut,.add{
+                    cursor: pointer;
                     width:19px;
                     color:#444444;
                     background-color:#f0f0f0;
@@ -292,4 +294,22 @@ body{
 
         }
     }
+}
+
+.header{
+    @include header;
+}
+
+.tmall-copyright{ 
+    @include tmall-copyright;
+    margin-top:30px;
+    padding-top:30px;
+    background:#fff !important;
+    font-size:12px !important;
+    .footer-tmallinfo{
+        a{
+            color: #333 !important;
+        }               
+    }
+    
 }

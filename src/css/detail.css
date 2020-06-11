@@ -1,4 +1,6 @@
 @charset "UTF-8";
+/* 公共样式 */
+/* 复用footer */
 .red {
   color: #ff0036;
   font-weight: bold;
@@ -205,11 +207,14 @@
 }
 .detail .d-num .box .num-r .cut, .detail .d-num .box .num-r .add {
   display: inline-block;
+  outline: none;
+  background: #fff;
   width: 16px;
   height: 13px;
   line-height: 13px;
   text-align: center;
   border: 1px solid #999;
+  cursor: pointer;
 }
 .detail .d-btn {
   margin: 30px 0 0 60px;
@@ -230,6 +235,99 @@
   margin-left: 5px;
   background-color: #ff0036;
   color: #fff;
+}
+
+/* header头部 */
+.header {
+  padding: 22px 0px;
+  height: 44px;
+  width: 1190px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+.header a img {
+  position: absolute;
+  top: 30px;
+  display: block;
+  width: 190px;
+  height: 27px;
+  background-size: 100% 100%;
+}
+.header .mallSearch {
+  width: 584px;
+  height: 36px;
+  line-height: 36px;
+  margin-left: 500px;
+  border: 2px solid #ff0036;
+  position: relative;
+}
+.header .mallSearch input {
+  width: 548px;
+  height: 30px;
+  font-size: 12px;
+  border: none;
+  outline: none;
+  padding: 5px 3px 5px 5px;
+  box-sizing: border-box;
+}
+.header .mallSearch button {
+  height: 36px;
+  letter-spacing: 5px;
+  border: none;
+  outline: none;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  color: #fff;
+  background-color: #ff0036;
+  width: 90px;
+  right: -2px;
+  font-size: 15px;
+}
+
+/* 尾部 */
+.tmall-copyright {
+  margin-top: 30px;
+  padding-top: 30px;
+  background: #fff !important;
+  font-size: 12px !important;
+}
+.tmall-copyright .tmall-copyright {
+  border-top: 2px solid #FF0036;
+  background: #000;
+  text-align: left;
+  min-height: 177px;
+}
+.tmall-copyright .tmall-copyright .footer-tmallinfo {
+  width: 1190px;
+  margin: 0 auto;
+  line-height: 25px;
+  padding: 5px 0;
+  color: #fff;
+}
+.tmall-copyright .tmall-copyright .footer-tmallinfo a {
+  margin-right: 3px;
+  color: #fff;
+}
+.tmall-copyright .tmall-copyright .footer-copyright {
+  width: 1190px;
+  margin: 0 auto;
+  line-height: 20px;
+  color: #a4a4a4;
+}
+.tmall-copyright .tmall-copyright .footer-copyright span {
+  color: #a4a4a4;
+}
+.tmall-copyright .tmall-copyright .footer-copyright a {
+  color: #A4A4A4;
+}
+.tmall-copyright .tmall-copyright .footer-copyright b {
+  display: block;
+  color: #686868;
+  font-weight: 400;
+}
+.tmall-copyright .footer-tmallinfo a {
+  color: #333 !important;
 }
 
 /*# sourceMappingURL=detail.css.map */

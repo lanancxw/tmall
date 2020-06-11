@@ -57,6 +57,7 @@ $redcolor:#ff0036;
         }
     } 
     .fm-hint{
+        display: none;;
         height:18px;
         line-height: 18px;
         padding:5px 8px;
@@ -70,6 +71,7 @@ $redcolor:#ff0036;
         }
     }
     .fm-field{
+        margin-top:20px;
         width:100%;
         .input-user{
             width:100%;
@@ -109,7 +111,7 @@ $redcolor:#ff0036;
     .fm-btn{
         width:100%;
         margin-top:20px;
-        button{
+        .submit{
             width:100%;
             line-height: 42px;
             text-align: center;
@@ -128,5 +130,20 @@ $redcolor:#ff0036;
             font-size:12px;
         }
     } 
+    
+}
+
+/* footer */
+.tmall-copyright{ 
+    @include tmall-copyright;
+    margin-top:30px;
+    border:none !important;
+    background:#fff !important;
+    font-size:12px !important;
+    .footer-tmallinfo{
+        a{
+            color: #333 !important;
+        }               
+    }
     
 }

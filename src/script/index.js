@@ -81,10 +81,22 @@ export class IndexWonderful {
 /* 创建内容区小图标 */
 export class NewHot {
     constructor(){
+        this.footer = document.querySelector('#mallPage .tmall-copyright')
+        this.top = document.querySelector('#mallPage .top')
         this.ul = document.querySelector('.j-newHotBrand .newHotBrandbody')
         this.init()
     }
     init() {
+        /* 顶部悬浮 */
+        document.onscroll = ()=>{
+            let top = document.documentElement.scrollTop;
+            if(top > 800){
+                this.top.style.opacity = 1;
+            }else{
+                this.top.style.opacity = 0;
+            }
+        }
+        
         let strhtml = '';
         for (let i = 1; i <= 30; i++) {
             strhtml += `
@@ -101,9 +113,25 @@ export class NewHot {
             `;
         }
         this.ul.innerHTML += strhtml;
+        this.include();
+    }
+    include(){
+        new ajax({
+            url: 'include/footer.html',
+            success:(data) => {
+                this.footer.innerHTML = data
+            }
+        })
     }
 }
 new NewHot();
+
+/* 顶部悬浮 */
+/* export class top{
+    constructor(){
+        this.top = document.querySelector('#mallPage .top')
+    }
+} */
 
 
 

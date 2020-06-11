@@ -5,7 +5,6 @@ export class Detail {
     constructor(sid) {
         this.sid = location.search.substring(1).split('=')[1];
         this.info = document.querySelector('#content .detail-render');
-        this.pic = document.querySelector('#content .detail-render');
         this.spic = document.querySelector('.pic .spic');      
         this.bpic = document.querySelector('.bpic');
         this.bf = document.querySelector('.pic .bf');
@@ -13,8 +12,11 @@ export class Detail {
         this.slunul = document.querySelector('.slun ul')      
         this.list = document.querySelectorAll('.slun li');
         this.bfang = document.querySelector('.bfang');
+        this.footer = document.querySelector('.tmall-copyright');
+        this.header = document.querySelector('.header')
 
         
+
         this.init();
     }
     init() {
@@ -60,6 +62,20 @@ export class Detail {
                 this.info.innerHTML = strhtml1;
             }
         })
+        /* 公共样式 */
+        new ajax({
+            url: 'include/header.html',
+            success:(data) => {
+                this.header.innerHTML = data
+            }
+        })
+        new ajax({
+            url: 'include/footer.html',
+            success:(data) => {
+                this.footer.innerHTML = data
+            }
+        })
+        
     }
 }
 new Detail();
@@ -99,7 +115,7 @@ export class Glass extends Detail{
     }
     sfmoveHandler(e){
         let leftValue = e.pageX - this.sf.offsetWidth/2 - 80;
-        let topValue = e.pageY - this.sf.offsetHeight/2 - 30;
+        let topValue = e.pageY - this.sf.offsetHeight/2 - (88+this.spic.offsetTop);
         if(leftValue < 0){
             leftValue = 0;
         }else if(leftValue >= this.spic.offsetWidth - this.sf.offsetWidth){
@@ -122,37 +138,55 @@ export class Glass extends Detail{
 export class Car extends Detail{
     constructor(sid){
         super(sid);
+
+        this.add = document.querySelector('.d-num .add');
+        this.cut = document.querySelector('.d-num .cut');
+
         this.car = document.querySelector('.detail .d-btn .car');
         this.count = document.querySelector('.detail .d-num .num');
         this.arrsid = [];//存储商品编号
         this.arrnum = [];//存储商品数量
         this.cookie();
+        this.num();//添加商品数量
        
     }
     cookie(){
-        console.log(this.car);
         // 取出cookie,判断是第一次还是多次点击
         if(new Cookie().get('cookiesid') && new Cookie().get('cookienum')){
             this.arrsid = new Cookie().get('cookiesid').split(',');//获取cookie,同时转换成数组
-            this.arrnum = new Cookie().get('cookienum').split(',');//获取cookie,同时转换成数组
+            this.arrnum = new Cookie().get('cookienum').split(',');
         }else{
             this.arrsid = [];
             this.arrnum = [];
         }
         //判断是否第一次加入购物车
         this.car.addEventListener('click',()=>{
-            if(this.arrsid.indexOf(this.sid) !== -1){//存在，不是第一次               
+            if(this.arrsid.indexOf(this.sid) !== -1){//存在              
                 let result = parseInt(this.arrnum[this.arrsid.indexOf(this.sid)]) + parseInt(this.count.value);                 
                 this.arrnum[this.arrsid.indexOf(this.sid)] = result;
-                let a = this.arrnum[this.arrsid.indexOf(this.sid)]
             }else{//第一次添加
                 this.arrsid.push(this.sid);
                 this.arrnum.push(this.count.value);
                 new Cookie().set('cookiesid',this.arrsid,10);
             }
             new Cookie().set('cookienum',this.arrnum,10);
+            confirm('加入成功');
             this.car.href = './car.html';
         });
+    }
+    num(){
+        this.add.onclick = ()=>{
+            this.count.value++;
+            return false;
+        }
+        this.cut.onclick = ()=>{
+            this.count.value-- ;
+            if(this.count.value <= 1){
+                this.count.value = 1;
+            }
+            return false;
+        }
+
     }
 }
 new Car();

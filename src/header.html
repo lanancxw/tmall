@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,14 +9,193 @@
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/reset.css">
 </head>
+
 <body>
-    <div class="header">
-        <a href="javascript:;" title="天猫Tmall.com"><img src="//img.alicdn.com/tfs/TB1_Gn8RXXXXXXqaFXXXXXXXXXX-380-54.png" alt=""></a>
-        <div class="mallSearch">
-            <input type="text" placeholder="搜索 天猫 商品/品牌/店铺">
-            <button type="submit">搜索</button>
-        </div>
-    </div>
-    
+    <!-- 
+        XMLHttpRequest;
+        call/apply
+        siblings()
+        jsonp cors
+        stopPropagation/cancelBubble
+        preventDefault/return false /returnValue = false;
+        
+        
+        1.get:一般用于获取数据；post:一般用于发送数据
+            用地址栏发送数据？加&；用请求头发送
+            不安全                  相对安全
+            有缓存                  没缓存
+            有长度限制              没长度限制
+        2.同源策略是阻止浏览器在一个页面访问另一个页面的内容，
+        这是浏览器的一种安全规则
+        协议不同，域名不同，接口不同，还有一级域名和二级域名不同都会产生跨域
+        
+        3.同步：在主线程完成，等前一个任务执行完毕后，再执行下一个任务；
+        异步：不进入主线程，在任务队列，等待主线程执行完毕后，通知请求执行。
+
+        4.call:立即执行，参数是一个一个的字符
+        apply:立即执行，参数是一个列表
+        bind:返回一个函数体，调用执行
+
+        5.
+        let ajax = new XMLHttpRequest();
+        ajax.open('get','http://www.baidu.com?name=张三');
+        ajax.send()
+        ajax.onreadystatechange = function(){
+            if(ajax.readyState === 4){
+                if(ajax.status === 200){
+                    console.log(ajax.response)
+                }
+            }
+        }
+
+        6.
+        const li = document.querySelectorAll('ul li');
+        for(let i = 0; i < li.length; i++){
+            for(let j = 0; j < li.length; j++){
+                li[i].style.color = '#000';
+            }
+            li[i].onclick = function(){
+                console.log(i);
+                li[i].style.color = red;
+            }
+        }
+
+        7.
+        es6:
+        class Person{
+            constructor(name){
+                this.name = name
+            }
+            eat(){
+
+            }
+        }
+        new Person('张三')
+        class Man expands Person{
+            constructor(name,age){
+                super(name)
+                this.age = age
+            }
+            run(){
+
+            }
+        }
+
+        8.
+     -->
+    <script>
+        /*  var func = (function () {
+             var a = 3;
+             return function () {
+                 a++;
+                 alert(a);
+             }
+         })()
+         func(); func() */
+
+        /* function reverse(){
+            var str = 'i am a student';
+            let str1 = str.split(' ').reverse()
+            console.log(str1);
+        }
+        reverse() */
+
+        // var arr = [1,2,3,4]
+        // arr.push(...arr);
+        // let a = arr.concat(arr);
+        // console.log(a);
+
+        /* function test(){
+            console.log(arguments);
+        }
+        test(1,2,null,3) */
+
+        /* var elements = $('div');
+        elements.css()
+        elements.width()
+        elements.height()
+        elements.eq()
+        elements.on()
+        elements.hover()
+        elements.first()
+        elements.last()
+        elements.bind()
+        elements.find() */
+
+        13./* 
+            jsonp利用script的src不跨域的属性连接接口
+            接口数据是一个回调函数，里面参数是数据
+         */
+
+        // 14.
+        /* function on(elem,type,handle){
+            if(elem.addEvenListener){
+                elem.addEvenListener('type',handle)
+            }else{
+                elem.attachEvent(on + 'type',handle)
+            }
+
+            if(elem.removeEvenListener){
+                elem.removeEvenlistener(handle)
+            }else{
+                elem.detachEvent(on + 'type',handle)
+            }
+
+        } */
+        //15
+        /* var fn = (function(){
+            var name = 1;
+            return function(){
+                console.log(name);
+                name++;
+                
+            }
+        })()
+        fn();
+        fn();
+        fn();
+        fn(); */
+
+        //16
+        /* var arr = [1,1,2,3,4,1,2,2,1];
+        let result = Array.from(new Set([...arr]));
+        console.log(result); */
+
+
+
+        /* function gcd(a, b) {
+
+            var c = a % b;
+            a = b;//18
+            b = c;//12
+            if (b == 0) {
+                return a;
+            }
+            return gcd(a, b);
+
+        }
+        //最小公倍数是乘积除以最大公约数
+        function gbs(a, b) {
+            return a * b / gcd(a, b);
+        }
+ */
+        //把图片变成雪碧图
+        //减少http的请求 cdn
+        //把css用sass编译
+        //懒加载
+        //减少dom操作
+
+        var obj = {
+            name:'cxw',
+            age:19
+        }
+        var b = [1,2,3]
+        let a = Symbol.iterator(b);
+        console.log(a);
+        
+    </script>
+
+
 </body>
+
 </html>

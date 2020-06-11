@@ -42,3 +42,89 @@
     color: $colorred;
     transform: translateY(-4px);
 }
+
+
+/* 复用footer */
+@mixin tmall-copyright{   
+    .tmall-copyright{
+        border-top: 2px solid #FF0036;
+        background: #000;
+        text-align: left;
+        min-height: 177px;
+        .footer-tmallinfo{
+            width:1190px;
+            margin:0 auto;
+            line-height:25px;
+            padding:5px 0;
+            color:#fff;
+            a{
+                margin-right: 3px;
+                color: #fff;
+            }               
+        }
+        .footer-copyright{
+            width:1190px;
+            margin:0 auto;
+            line-height: 20px;
+            color: #a4a4a4;
+            span{
+                color:#a4a4a4;
+            }
+            a{
+                color:#A4A4A4;
+            }
+            b{
+                display: block;
+                color: #686868;
+                font-weight: 400
+            }
+        }           
+    }
+}
+
+@mixin header {
+    padding: 22px 0px;
+    height: 44px;
+    width: 1190px;
+    margin: auto;
+    margin-bottom:20px;
+    a img{
+        position: absolute;
+        top:30px;
+        display: block;
+        width: 190px;
+        height:27px;
+        background-size:100% 100%;
+    }
+    .mallSearch{
+        width:584px;
+        height:36px;
+        line-height: 36px;
+        margin-left:500px;
+        border:2px solid $red;
+        position: relative;
+        input{
+            width:548px;
+            height:30px;
+            font-size:12px;
+            border:none;
+            outline: none;//去掉input边框
+            padding:5px 3px 5px 5px;
+            box-sizing: border-box;
+        }
+        button{
+            height:36px;
+            letter-spacing: 5px;
+            border:none;
+            outline: none;
+            position: absolute;
+            z-index:1;
+            top:0;
+            color:#fff;
+            background-color: $red;
+            width:90px;
+            right:-2px;
+            font-size:15px;
+        }
+    }
+}

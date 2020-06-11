@@ -1,7 +1,7 @@
 <?php
 include "conn.php";
 
-$pagesize = 30; //单个页面展示的数据条数
+$pagesize = 20; //单个页面展示的数据条数
 
 $sql = "select * from goods"; //获取所有的数据
 

@@ -1,5 +1,6 @@
 @charset "UTF-8";
 /* 公共样式 */
+/* 复用footer */
 /* 登录头部 */
 .header {
   padding: 22px 0px;
@@ -58,6 +59,7 @@
   font-size: 16px;
 }
 .form-login .fm-hint {
+  display: none;
   height: 18px;
   line-height: 18px;
   padding: 5px 8px;
@@ -71,6 +73,7 @@
   color: #ff934c;
 }
 .form-login .fm-field {
+  margin-top: 20px;
   width: 100%;
 }
 .form-login .fm-field .input-user {
@@ -122,7 +125,7 @@
   width: 100%;
   margin-top: 20px;
 }
-.form-login .fm-btn button {
+.form-login .fm-btn .submit {
   width: 100%;
   line-height: 42px;
   text-align: center;
@@ -139,6 +142,51 @@
 .form-login .fm-link a {
   color: #6c6c6c;
   font-size: 12px;
+}
+
+/* footer */
+.tmall-copyright {
+  margin-top: 30px;
+  border: none !important;
+  background: #fff !important;
+  font-size: 12px !important;
+}
+.tmall-copyright .tmall-copyright {
+  border-top: 2px solid #FF0036;
+  background: #000;
+  text-align: left;
+  min-height: 177px;
+}
+.tmall-copyright .tmall-copyright .footer-tmallinfo {
+  width: 1190px;
+  margin: 0 auto;
+  line-height: 25px;
+  padding: 5px 0;
+  color: #fff;
+}
+.tmall-copyright .tmall-copyright .footer-tmallinfo a {
+  margin-right: 3px;
+  color: #fff;
+}
+.tmall-copyright .tmall-copyright .footer-copyright {
+  width: 1190px;
+  margin: 0 auto;
+  line-height: 20px;
+  color: #a4a4a4;
+}
+.tmall-copyright .tmall-copyright .footer-copyright span {
+  color: #a4a4a4;
+}
+.tmall-copyright .tmall-copyright .footer-copyright a {
+  color: #A4A4A4;
+}
+.tmall-copyright .tmall-copyright .footer-copyright b {
+  display: block;
+  color: #686868;
+  font-weight: 400;
+}
+.tmall-copyright .footer-tmallinfo a {
+  color: #333 !important;
 }
 
 /*# sourceMappingURL=login.css.map */

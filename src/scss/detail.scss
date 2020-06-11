@@ -1,4 +1,6 @@
 $red:#ff0036;
+/* 公共样式 */
+@import "common.scss";
 .red{
     color:$red;
     font-weight: bold;
@@ -204,11 +206,14 @@ $red:#ff0036;
                 align-content: space-between;
                 .cut,.add{
                     display: inline-block;
+                    outline:none;
+                    background:#fff;
                     width:16px;
                     height:13px;
                     line-height: 13px;
                     text-align: center;
                     border:1px solid #999;
+                    cursor:pointer;
                 }
             }            
         }
@@ -233,4 +238,24 @@ $red:#ff0036;
             }
         }
     }
+}
+/* header头部 */
+.header{
+    @include header
+}
+
+
+/* 尾部 */
+.tmall-copyright{ 
+    @include tmall-copyright;
+    margin-top:30px;
+    padding-top:30px;
+    background:#fff !important;
+    font-size:12px !important;
+    .footer-tmallinfo{
+        a{
+            color: #333 !important;
+        }               
+    }
+    
 }
