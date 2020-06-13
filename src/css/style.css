@@ -1,6 +1,8 @@
 @charset "UTF-8";
 /* 公共样式 */
+/* 公共样式 */
 /* 复用footer */
+/* 复用头部 */
 /* 导航栏字体 */
 @font-face {
   font-family: fpIconFont;
@@ -26,6 +28,9 @@
 }
 .sn-container a {
   color: #999;
+}
+.sn-container a:hover {
+  color: #FF0036;
 }
 .sn-container .login-info .sn-login {
   padding: 0 10px 0 20px;
@@ -620,14 +625,17 @@
   content: "￥";
 }
 
-/* content - j-life */
-.j-lift ul {
+/* 楼梯*/
+.j-lift {
   width: 36px;
+  height: 222px;
   position: fixed;
   left: 3px;
   top: 35%;
+  transition: all .5s;
+  opacity: 0;
 }
-.j-lift ul li {
+.j-lift li, .j-lift .nav {
   width: 36px;
   height: 36px;
   padding: 6px;
@@ -635,25 +643,25 @@
   background-color: #666;
   margin-bottom: 1px;
 }
-.j-lift ul li:hover {
+.j-lift li:hover, .j-lift .nav:hover {
   background-color: #427def;
 }
-.j-lift ul li a {
+.j-lift li a, .j-lift .nav a {
   font-size: 12px;
   color: #fff;
   text-align: center;
 }
-.j-lift ul li:nth-of-type(1) {
+.j-lift .nav {
   background-color: #FF0036;
 }
-.j-lift ul li:nth-of-type(6) {
+.j-lift li:nth-of-type(5) {
   padding: none;
 }
-.j-lift ul li:nth-of-type(6) a {
+.j-lift li:nth-of-type(5) a {
   display: inline-block;
   transform: translateY(-6px);
 }
-.j-lift ul li:nth-of-type(6) a i {
+.j-lift li:nth-of-type(5) a i {
   font-size: 18px;
 }
 
@@ -666,13 +674,13 @@
 
 /* 顶部悬浮 */
 .top {
-  display: none;
   width: 100%;
   height: 50px;
   background-color: #FF0036;
   position: fixed;
   top: 0;
   left: 0;
+  opacity: 0;
   z-index: 99;
   transition: all .5s;
 }

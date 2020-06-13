@@ -11,7 +11,7 @@ $red:#ff0036;
 }
 #content{
     width:1190px;
-    margin:0 auto;
+    margin:100px auto;
     position: relative;
     padding-top:30px;
     display:flex;
@@ -241,6 +241,7 @@ $red:#ff0036;
 }
 /* header头部 */
 .header{
+    @include nav;
     @include header
 }
 

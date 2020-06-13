@@ -1,6 +1,8 @@
 @charset "UTF-8";
 /* 公共样式 */
+/* 公共样式 */
 /* 复用footer */
+/* 复用头部 */
 .red {
   color: #ff0036;
   font-weight: bold;
@@ -13,7 +15,7 @@
 
 #content {
   width: 1190px;
-  margin: 0 auto;
+  margin: 100px auto;
   position: relative;
   padding-top: 30px;
   display: flex;
@@ -239,29 +241,76 @@
 
 /* header头部 */
 .header {
+  width: 100%;
+  font-family: "Microsoft YaHei", tahoma, arial, "Hiragino Sans GB", "宋体", sans-serif;
+  font-size: 12px;
+  height: 32px;
+  line-height: 32px;
+  background-color: #f2f2f2;
+}
+.header .sn-container {
+  position: relative;
+  color: #999;
+}
+.header .sn-container a {
+  color: #999;
+}
+.header .sn-container a:hover {
+  color: #FF0036;
+}
+.header .sn-container .login-info .sn-login {
+  padding: 0 10px 0 20px;
+}
+.header .sn-container ul {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.header .sn-container ul li {
+  float: left;
+  margin-right: 12px;
+}
+.header .sn-container ul li a span.icon-gouwuche {
+  font-size: 13px;
+  margin-right: 3px;
+  color: #FF0036;
+}
+.header .sn-container ul li span.icon-phone {
+  font-size: 14px;
+  color: #FF0036;
+}
+.header .sn-container ul li span.icon-daohanglan {
+  font-size: 12px;
+  color: #FF0036;
+}
+.header .header-con {
   padding: 22px 0px;
   height: 44px;
   width: 1190px;
   margin: auto;
   margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
 }
-.header a img {
-  position: absolute;
-  top: 30px;
+.header .header-con a {
   display: block;
   width: 190px;
   height: 27px;
   background-size: 100% 100%;
 }
-.header .mallSearch {
+.header .header-con a img {
+  width: 190px;
+  height: 27px;
+  background-size: 100% 100%;
+}
+.header .header-con .mallSearch {
   width: 584px;
   height: 36px;
   line-height: 36px;
-  margin-left: 500px;
   border: 2px solid #ff0036;
   position: relative;
 }
-.header .mallSearch input {
+.header .header-con .mallSearch input {
   width: 548px;
   height: 30px;
   font-size: 12px;
@@ -270,7 +319,7 @@
   padding: 5px 3px 5px 5px;
   box-sizing: border-box;
 }
-.header .mallSearch button {
+.header .header-con .mallSearch button {
   height: 36px;
   letter-spacing: 5px;
   border: none;

@@ -5,13 +5,12 @@ $fonts:arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;
 @import "common.scss";
 .contain{
     width:990px;
-    margin:0 auto;
+    position:relative;
+    padding-bottom: 100px;
+    margin:50px auto 0;
 }
 .org{
     color:$colororg;
-}
-body{
-    height:1000px;
 }
 .logo{
     width:95px;
@@ -31,7 +30,7 @@ body{
         line-height:24px;
         border-bottom: 2px solid #e6e6e6;
         .t-info{
-            width:120px;
+            width:110px;
             text-indent:1em;
             height:37px;
             display: inline-block;
@@ -233,7 +232,7 @@ body{
     height:50px;
     line-height: 50px;
     background-color: #e5e5e5;
-    position: fixed;
+    position: absolute;
     bottom:0;
     font-size:12px;
     ul>li{
@@ -284,7 +283,7 @@ body{
         }
         button{
             width:120px;
-            height:51px;
+            height:50px;
             outline: none;
             border:none;
             color:#fff;
@@ -297,13 +296,15 @@ body{
 }
 
 .header{
+    @include nav;
     @include header;
 }
 
 .tmall-copyright{ 
     @include tmall-copyright;
-    margin-top:30px;
-    padding-top:30px;
+    .tmall-copyright{
+        padding-top:30px;
+    }
     background:#fff !important;
     font-size:12px !important;
     .footer-tmallinfo{

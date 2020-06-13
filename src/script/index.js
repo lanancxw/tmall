@@ -82,21 +82,31 @@ export class IndexWonderful {
 export class NewHot {
     constructor(){
         this.footer = document.querySelector('#mallPage .tmall-copyright')
-        this.top = document.querySelector('#mallPage .top')
+        this.top = document.querySelector('#mallPage .top');
+        this.lift = document.querySelector('#mallPage .j-lift');
         this.ul = document.querySelector('.j-newHotBrand .newHotBrandbody')
+        this.li = document.querySelectorAll('.j-lift li');
         this.init()
     }
     init() {
-        /* 顶部悬浮 */
-        document.onscroll = ()=>{
-            let top = document.documentElement.scrollTop;
-            if(top > 800){
-                this.top.style.opacity = 1;
-            }else{
-                this.top.style.opacity = 0;
-            }
-        }
         
+        document.onscroll = ()=>{
+            let scrolltop = document.documentElement.scrollTop;
+             /* 顶部悬浮 */
+             if(scrolltop > 700){
+                this.top.style.opacity= 1;
+                this.liclick()
+            }else{
+                this.top.style.opacity= 0;
+            }
+            /* 侧边楼梯 */
+            if(scrolltop > 1200){
+                this.lift.style.opacity= 1;
+            }else{
+                this.lift.style.opacity= 0;
+            }
+           
+        }
         let strhtml = '';
         for (let i = 1; i <= 30; i++) {
             strhtml += `
@@ -114,6 +124,16 @@ export class NewHot {
         }
         this.ul.innerHTML += strhtml;
         this.include();
+    }
+    liclick(){
+        for(let i=0; i < this.li.length; i++){
+            this.li[i].onclick = ()=>{
+                for(let j = 0; j < this.li.length; j++){                    
+                    this.li[j].style.backgroundColor = '#666';
+                }
+                this.li[i].style.backgroundColor = '#427def';
+            }
+        }
     }
     include(){
         new ajax({

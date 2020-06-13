@@ -14,9 +14,6 @@ export class Detail {
         this.bfang = document.querySelector('.bfang');
         this.footer = document.querySelector('.tmall-copyright');
         this.header = document.querySelector('.header')
-
-        
-
         this.init();
     }
     init() {
@@ -41,7 +38,7 @@ export class Detail {
                 }
                 this.slunul.innerHTML = strhtml;
                 new Glass();
-
+                
                 /* 渲染文字 */
                 let strhtml1 = '';
                 strhtml1 += `
@@ -171,7 +168,10 @@ export class Car extends Detail{
             }
             new Cookie().set('cookienum',this.arrnum,10);
             confirm('加入成功');
-            this.car.href = './car.html';
+            this.count.value = 1;
+            console.log(this.count.value);
+            // this.car.href = './car.html';
+            
         });
     }
     num(){
