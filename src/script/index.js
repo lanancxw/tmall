@@ -153,11 +153,16 @@ export class NewHot {
         this.ul.innerHTML += strhtml;
     }
     liclick(i) {
+        console.log(i);
         document.onscroll = null;
         for (let j = 0; j < this.li.length; j++) {
             this.li[j].style.backgroundColor = '#666';
+        }       
+        if(i === 3){
+            document.documentElement.scrollTop = 0;
+        }else{
+            document.documentElement.scrollTop = this['louceng' + i].offsetTop - 100;
         }
-        document.documentElement.scrollTop = this['louceng' + i].offsetTop - 100;
         this.li[i].style.backgroundColor = '#427def';
         setTimeout(()=>{
             document.onscroll = () => {
