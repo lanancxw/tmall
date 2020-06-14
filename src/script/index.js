@@ -2,6 +2,7 @@
 import ajax from "./ajax.js";
 /* 封装懒加载*/
 import LazyLoad from "./lazyload.js";
+import Cookie from "./cookie.js";
 /* 天猫国际 */
 export class IndexTmallInt {
     constructor() {
@@ -80,32 +81,59 @@ export class IndexWonderful {
 }
 /* 创建内容区小图标 */
 export class NewHot {
-    constructor(){
+    constructor() {
         this.footer = document.querySelector('#mallPage .tmall-copyright')
         this.top = document.querySelector('#mallPage .top');
         this.lift = document.querySelector('#mallPage .j-lift');
         this.ul = document.querySelector('.j-newHotBrand .newHotBrandbody')
         this.li = document.querySelectorAll('.j-lift li');
+        this.nav = document.querySelectorAll('.j-lift .nav');
+        this.louceng0 = document.querySelector('.j-newFloor .floor-img img');
+        this.louceng1 = document.querySelector('.j-newFloor1 .floor-img img');
+        this.louceng2 = document.querySelector('.j-wonderful');
+        this.name = document.querySelector('#mallPage #site-nav .login-info .sn-login');
+        this.usersid;
         this.init()
     }
     init() {
-        
-        document.onscroll = ()=>{
-            let scrolltop = document.documentElement.scrollTop;
-             /* 顶部悬浮 */
-             if(scrolltop > 700){
-                this.top.style.opacity= 1;
-                this.liclick()
-            }else{
-                this.top.style.opacity= 0;
-            }
+        console.log(this.name);
+        let cookie = new Cookie();
+        console.log(cookie.get('sid'));
+        if(cookie.get("sid")){
+            console.log(cookie.get('sid'));
+            this.usersid = cookie.get("sid")
+            new ajax({
+                url: "http://10.31.162.53/tmall/php/getsid.php",
+                data:{
+                    loginsid:this.usersid
+                },
+                success: (data)=> {
+                   let arrdata = JSON.parse(data);
+                   console.log(arrdata);
+                    this.name.innerHTML = '欢迎' + arrdata.username;
+                    this.name.href = '';
+                    this.name.nextElementSibling.innerHTML = '退出';
+                    this.name.nextElementSibling.onclick = ()=>{
+                        cookie.unset('sid','',-1);
+                        this.name.nextElementSibling.href = "http://10.31.162.53/tmall/src/login.html";
+                    }
+                }
+            })
+        }
+        document.onscroll = () => {
+            let scrollT = document.documentElement.scrollTop;
+            this.scroll();
             /* 侧边楼梯 */
-            if(scrolltop > 1200){
-                this.lift.style.opacity= 1;
-            }else{
-                this.lift.style.opacity= 0;
+            if (scrollT > 700) {
+                this.lift.style.opacity = 1;
+            } else {
+                this.lift.style.opacity = 0;
             }
-           
+        }        
+        for(let i = 0;i<this.li.length;i++){
+            this.lift.children[1].children[i].onclick = ()=>{
+                this.liclick(i)
+            }
         }
         let strhtml = '';
         for (let i = 1; i <= 30; i++) {
@@ -123,35 +151,59 @@ export class NewHot {
             `;
         }
         this.ul.innerHTML += strhtml;
-        this.include();
     }
-    liclick(){
-        for(let i=0; i < this.li.length; i++){
-            this.li[i].onclick = ()=>{
-                for(let j = 0; j < this.li.length; j++){                    
-                    this.li[j].style.backgroundColor = '#666';
-                }
-                this.li[i].style.backgroundColor = '#427def';
-            }
+    liclick(i) {
+        document.onscroll = null;
+        for (let j = 0; j < this.li.length; j++) {
+            this.li[j].style.backgroundColor = '#666';
         }
-    }
-    include(){
-        new ajax({
-            url: 'include/footer.html',
-            success:(data) => {
-                this.footer.innerHTML = data
+        document.documentElement.scrollTop = this['louceng' + i].offsetTop - 100;
+        this.li[i].style.backgroundColor = '#427def';
+        setTimeout(()=>{
+            document.onscroll = () => {
+                let scrollT = document.documentElement.scrollTop;
+                this.scroll();
+                /* 侧边楼梯 */
+                if (scrollT > 700) {
+                    this.lift.style.opacity = 1;
+                } else {
+                    this.lift.style.opacity = 0;
+                }
             }
-        })
+        },50)
+    }
+    scroll() {
+        let scrollT = document.documentElement.scrollTop;
+        /* 顶部悬浮 */
+        if (scrollT > 700) {
+            this.top.style.display = 'block';
+            console.log(scrollT, this.louceng0.offsetTop, this.louceng1.offsetTop, this.louceng2.offsetTop)
+            if (this.louceng0.offsetTop - 100 < scrollT) {
+                this.li[0].style.backgroundColor = '#427def';
+                // if()
+            } else {
+                this.li[0].style.backgroundColor = '#666';
+            }
+            if (this.louceng1.offsetTop - 100 < scrollT) {
+                this.li[0].style.backgroundColor = '#666';
+                this.li[1].style.backgroundColor = '#427def';
+            } else {
+                this.li[1].style.backgroundColor = '#666';
+            }
+            if (this.louceng2.offsetTop - 100 < scrollT) {
+                this.li[1].style.backgroundColor = '#666';
+                this.li[2].style.backgroundColor = '#427def';
+            } else {
+                this.li[2].style.backgroundColor = '#666';
+            }
+        } else {
+            this.top.style.display = 'none';
+        }
+
     }
 }
 new NewHot();
 
-/* 顶部悬浮 */
-/* export class top{
-    constructor(){
-        this.top = document.querySelector('#mallPage .top')
-    }
-} */
 
 
 

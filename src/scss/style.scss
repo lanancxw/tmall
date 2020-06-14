@@ -636,9 +636,7 @@ $j-category-bluebg:#427def;
         box-sizing: border-box;
         background-color: #666;
         margin-bottom:1px;
-        &:hover{
-            background-color: $j-category-bluebg;
-        }
+        
         a{
             font-size:12px;
             color:#fff;
@@ -648,7 +646,10 @@ $j-category-bluebg:#427def;
     .nav{
         background-color: $redColor;
     }
-    li:nth-of-type(5){
+    li:hover{
+        background-color: $j-category-bluebg;
+    }
+    li:nth-of-type(4){
         padding:none;
         a{
             display: inline-block;
@@ -676,7 +677,7 @@ $j-category-bluebg:#427def;
     position: fixed;
     top:0;
     left:0;    
-    opacity:0;
+    display:none;
     z-index:99;
     transition:all .5s; 
     .top-in{

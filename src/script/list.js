@@ -2,7 +2,7 @@
 import ajax from "./ajax.js";
 /* 封装懒加载 */
 import LazyLoad from "./lazyload.js";
-
+import Cookie from "./cookie.js";
 /* 分页 */
 new CustomPagination('#page', {
     next_prev_links: 'yes',//是否开启[上一页/下一页]
@@ -65,11 +65,11 @@ new CustomPagination('#page', {
 });
 
 /* 排序 */
-export default class Sort {
+export class Sort {
     constructor() {
-        this.btnDefault = document.querySelector('.default');
-        this.btnCeil = document.querySelector('.ceil');
-        this.btnFloor = document.querySelector('.floor');
+        this.btnDefault = document.querySelector('#content .default');
+        this.btnCeil = document.querySelector('#content .ceil');
+        this.btnFloor = document.querySelector('#content .floor');
         this.ul = document.querySelector('.wonderfulbody');
         this.li = document.querySelectorAll('.wonderfulbody li');
         this.imgs = document.querySelectorAll('.wonderfulbody img');
@@ -77,10 +77,36 @@ export default class Sort {
         this.array = [];//排序中的数组
         this.prev = null;
         this.next = null;
+
+        this.usersid;
+        this.name = document.querySelector('.header .login-info .sn-login');
         this.init();
     }
     init() {
+        let cookie = new Cookie();
+        if(cookie.get("sid")){
+            console.log(cookie.get('sid'));
+            this.usersid = cookie.get("sid")
+            new ajax({
+                url: "http://10.31.162.53/tmall/php/getsid.php",
+                data:{
+                    loginsid:this.usersid
+                },
+                success: (data)=> {
+                   let arrdata = JSON.parse(data);
+                   console.log(arrdata);
+                    this.name.innerHTML = '欢迎' + arrdata.username;
+                    this.name.href = '';
+                    this.name.nextElementSibling.innerHTML = '退出';
+                    this.name.nextElementSibling.onclick = ()=>{
+                        cookie.unset('sid','',-1);
+                        this.name.nextElementSibling.href = "http://10.31.162.53/tmall/src/login.html";
+                    }
+                }
+            })
+        }
         for (let i = 0; i < this.li.length; i++) {
+            this.array.push(this.li[i]);
             this.array_default.push(this.li[i]);
         }
         this.btnDefault.onclick = () => {
@@ -91,16 +117,16 @@ export default class Sort {
         this.btnCeil.addEventListener('click', () => this.btnceilHandler());
         this.btnFloor.addEventListener('click', () => this.btnfloorHandler());
     }
-    btnceilHandler() {  
+    btnceilHandler() { 
         for (let i = 0; i < this.array.length - 1; i++) {
             for (let j = 0; j < this.array.length - i - 1; j++) {
                 this.prev = parseFloat(this.array[j].children[0].children[1].children[1].textContent);
                 this.next = parseFloat(this.array[j + 1].children[0].children[1].children[1].textContent);
                 if (this.prev > this.next) {
+
                     let temp = this.array[j];
                     this.array[j] = this.array[j + 1];
-                    this.array[j + 1] = temp;     
-                              
+                    this.array[j + 1] = temp;                   
                 }
             }
         }
@@ -128,4 +154,5 @@ export default class Sort {
         document.documentElement.scrollTop = 2
     }
 }
-/* 点击跳转 */
+
+/*  */

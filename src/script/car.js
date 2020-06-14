@@ -14,6 +14,9 @@ export class Car {
         this.sid;
         this.num;
         this.trClone;
+
+        this.usersid;
+        this.name;
         this.init();
     }
     init() {
@@ -213,7 +216,32 @@ export class Car {
         new ajax({
             url: 'include/header.html',
             success: (data) => {
-                this.header.innerHTML = data
+                this.header.innerHTML = data;
+                /* 登录欢迎 */
+                this.name = document.querySelector('.header .login-info .sn-login');
+                console.log(this.name);
+                let cookie = new Cookie();
+                if (cookie.get("sid")) {
+                    console.log(cookie.get('sid'));
+                    this.usersid = cookie.get("sid")
+                    new ajax({
+                        url: "http://10.31.162.53/tmall/php/getsid.php",
+                        data: {
+                            loginsid: this.usersid
+                        },
+                        success: (data) => {
+                            let arrdata = JSON.parse(data);
+                            console.log(arrdata);
+                            this.name.innerHTML = '欢迎' + arrdata.username;
+                            this.name.href = '';
+                            this.name.nextElementSibling.innerHTML = '退出';
+                            this.name.nextElementSibling.onclick = () => {
+                                cookie.unset('sid', '', -1);
+                                this.name.nextElementSibling.href = "http://10.31.162.53/tmall/src/login.html";
+                            }
+                        }
+                    })
+                }
             }
         })
         new ajax({
@@ -366,7 +394,7 @@ export class CarHandler {
             this.btn.style.background = '#ff4400';
 
             this.tolDel.onclick = () => {
-                if (this.footer.checked === true){
+                if (this.footer.checked === true) {
                     if (confirm('你确定删除全部吗？')) {
                         for (let i = 1; i < this.tr1.length; i++) {
                             this.tr1[i].remove()

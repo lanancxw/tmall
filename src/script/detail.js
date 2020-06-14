@@ -5,15 +5,18 @@ export class Detail {
     constructor(sid) {
         this.sid = location.search.substring(1).split('=')[1];
         this.info = document.querySelector('#content .detail-render');
-        this.spic = document.querySelector('.pic .spic');      
+        this.spic = document.querySelector('.pic .spic');
         this.bpic = document.querySelector('.bpic');
         this.bf = document.querySelector('.pic .bf');
-        this.sf = document.querySelector('.spic .sf'); 
-        this.slunul = document.querySelector('.slun ul')      
+        this.sf = document.querySelector('.spic .sf');
+        this.slunul = document.querySelector('.slun ul')
         this.list = document.querySelectorAll('.slun li');
         this.bfang = document.querySelector('.bfang');
         this.footer = document.querySelector('.tmall-copyright');
         this.header = document.querySelector('.header')
+
+        this.usersid;
+        this.name;
         this.init();
     }
     init() {
@@ -23,22 +26,22 @@ export class Detail {
             data: {
                 sid: this.sid
             },
-            success:(data) => {
+            success: (data) => {
                 let arrdata = JSON.parse(data);
                 /* 渲染图片 */
                 this.spic.children[0].src = arrdata.goods_bigpic;
                 this.bpic.src = arrdata.goods_bigpic;
                 let listpic = arrdata.goods_listpic.split(',');
                 let strhtml = ''
-                for(let i = 0; i < listpic.length; i++){
+                for (let i = 0; i < listpic.length; i++) {
                     strhtml += `
                     <li><img src="${listpic[i]}"
                     alt=""></li>
-                    `    
+                    `
                 }
                 this.slunul.innerHTML = strhtml;
                 new Glass();
-                
+
                 /* 渲染文字 */
                 let strhtml1 = '';
                 strhtml1 += `
@@ -62,66 +65,90 @@ export class Detail {
         /* 公共样式 */
         new ajax({
             url: 'include/header.html',
-            success:(data) => {
-                this.header.innerHTML = data
+            success: (data) => {
+                this.header.innerHTML = data;
+                /* 登录欢迎 */
+                this.name = document.querySelector('.header .login-info .sn-login');
+                let cookie = new Cookie();
+                if (cookie.get("sid")) {
+                    console.log(cookie.get('sid'));
+                    this.usersid = cookie.get("sid")
+                    new ajax({
+                        url: "http://10.31.162.53/tmall/php/getsid.php",
+                        data: {
+                            loginsid: this.usersid
+                        },
+                        success: (data) => {
+                            let arrdata = JSON.parse(data);
+                            console.log(arrdata);
+                            this.name.innerHTML = '欢迎' + arrdata.username;
+                            this.name.href = '';
+                            this.name.nextElementSibling.innerHTML = '退出';
+                            this.name.nextElementSibling.onclick = () => {
+                                cookie.unset('sid', '', -1);
+                                this.name.nextElementSibling.href = "http://10.31.162.53/tmall/src/login.html";
+                            }
+                        }
+                    })
+                }
             }
         })
         new ajax({
             url: 'include/footer.html',
-            success:(data) => {
+            success: (data) => {
                 this.footer.innerHTML = data
             }
         })
-        
+
     }
 }
 new Detail();
 
 /* 放大镜效果 */
-export class Glass extends Detail{
-    constructor(){
+export class Glass extends Detail {
+    constructor() {
         super()
         this.x;
         this.y;
         this.bili;
         this.init();
     }
-    init(){
+    init() {
         //小放/大放 = 小图/大图
-        this.sf.style.width = (this.bf.offsetWidth * this.spic.offsetWidth / this.bpic.offsetWidth)+'px';
-        this.sf.style.height = (this.bf.offsetHeight * this.spic.offsetHeight / this.bpic.offsetHeight)+'px';
+        this.sf.style.width = (this.bf.offsetWidth * this.spic.offsetWidth / this.bpic.offsetWidth) + 'px';
+        this.sf.style.height = (this.bf.offsetHeight * this.spic.offsetHeight / this.bpic.offsetHeight) + 'px';
         this.x = this.spic.offsetLeft;
         this.y = this.spic.offsetTop;
         this.bili = this.bpic.offsetWidth / this.spic.offsetWidth
-        this.spic.onmouseenter = ()=>{
+        this.spic.onmouseenter = () => {
             this.sf.style.visibility = 'visible';
             this.bfang.style.visibility = 'visible';
         }
-        this.spic.onmouseleave= ()=>{
+        this.spic.onmouseleave = () => {
             this.sf.style.visibility = 'hidden';
             this.bfang.style.visibility = 'hidden';
         }
-        document.addEventListener('mousemove',(e) => this.sfmoveHandler(e));
-        for(let i = 0; i < this.list.length; i++){
-            this.list[i].onclick = ()=>{
+        document.addEventListener('mousemove', (e) => this.sfmoveHandler(e));
+        for (let i = 0; i < this.list.length; i++) {
+            this.list[i].onclick = () => {
                 // this.list[i].children[0].src;
                 this.spic.children[0].src = this.list[i].children[0].src;
                 this.bpic.src = this.list[i].children[0].src;
             }
         }
     }
-    sfmoveHandler(e){
-        let leftValue = e.pageX - this.sf.offsetWidth/2 - 80;
-        let topValue = e.pageY - this.sf.offsetHeight/2 - (88+this.spic.offsetTop);
-        if(leftValue < 0){
+    sfmoveHandler(e) {
+        let leftValue = e.pageX - this.sf.offsetWidth / 2 - 80;
+        let topValue = e.pageY - this.sf.offsetHeight / 2 - (88 + this.spic.offsetTop);
+        if (leftValue < 0) {
             leftValue = 0;
-        }else if(leftValue >= this.spic.offsetWidth - this.sf.offsetWidth){
+        } else if (leftValue >= this.spic.offsetWidth - this.sf.offsetWidth) {
             leftValue = this.spic.offsetWidth - this.sf.offsetWidth;
 
         }
-        if(topValue < 0){
+        if (topValue < 0) {
             topValue = 0;
-        }else if(topValue >= this.spic.offsetHeight - this.sf.offsetHeight){           
+        } else if (topValue >= this.spic.offsetHeight - this.sf.offsetHeight) {
             topValue = parseInt(this.spic.offsetHeight - this.sf.offsetHeight);
         }
         this.sf.style.left = leftValue + 'px';
@@ -132,8 +159,8 @@ export class Glass extends Detail{
 }
 
 /* 存储cookie */
-export class Car extends Detail{
-    constructor(sid){
+export class Car extends Detail {
+    constructor(sid) {
         super(sid);
 
         this.add = document.querySelector('.d-num .add');
@@ -145,43 +172,43 @@ export class Car extends Detail{
         this.arrnum = [];//存储商品数量
         this.cookie();
         this.num();//添加商品数量
-       
+
     }
-    cookie(){
+    cookie() {
         // 取出cookie,判断是第一次还是多次点击
-        if(new Cookie().get('cookiesid') && new Cookie().get('cookienum')){
+        if (new Cookie().get('cookiesid') && new Cookie().get('cookienum')) {
             this.arrsid = new Cookie().get('cookiesid').split(',');//获取cookie,同时转换成数组
             this.arrnum = new Cookie().get('cookienum').split(',');
-        }else{
+        } else {
             this.arrsid = [];
             this.arrnum = [];
         }
         //判断是否第一次加入购物车
-        this.car.addEventListener('click',()=>{
-            if(this.arrsid.indexOf(this.sid) !== -1){//存在              
-                let result = parseInt(this.arrnum[this.arrsid.indexOf(this.sid)]) + parseInt(this.count.value);                 
+        this.car.addEventListener('click', () => {
+            if (this.arrsid.indexOf(this.sid) !== -1) {//存在              
+                let result = parseInt(this.arrnum[this.arrsid.indexOf(this.sid)]) + parseInt(this.count.value);
                 this.arrnum[this.arrsid.indexOf(this.sid)] = result;
-            }else{//第一次添加
+            } else {//第一次添加
                 this.arrsid.push(this.sid);
                 this.arrnum.push(this.count.value);
-                new Cookie().set('cookiesid',this.arrsid,10);
+                new Cookie().set('cookiesid', this.arrsid, 10);
             }
-            new Cookie().set('cookienum',this.arrnum,10);
+            new Cookie().set('cookienum', this.arrnum, 10);
             confirm('加入成功');
             this.count.value = 1;
             console.log(this.count.value);
             // this.car.href = './car.html';
-            
+
         });
     }
-    num(){
-        this.add.onclick = ()=>{
+    num() {
+        this.add.onclick = () => {
             this.count.value++;
             return false;
         }
-        this.cut.onclick = ()=>{
-            this.count.value-- ;
-            if(this.count.value <= 1){
+        this.cut.onclick = () => {
+            this.count.value--;
+            if (this.count.value <= 1) {
                 this.count.value = 1;
             }
             return false;
